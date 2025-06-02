@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/master.css" />
+    <title>Conifgurar Perfil - PUMAF</title>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">
+        <img class="logoPumaf" src="../img/logo.webp" alt="Logo PUMAF" />
+      </a>
+      <nav>
+        <ul class="linksPumaf">
+          <li><a href="#">Item 1</a></li>
+          <li><a href="./reservas.html">Reservas</a></li>
+          <!-- <li><a href="./login.html">Iniciar Sesión</a></li>
+          <li><a href="./registro.html">Registrarse</a></li> -->
+          <li><a href="./perfilUsuario.html"><img src="https://placehold.co/100x100" alt="Perfil usuario" class="imagenHeader"></a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="background">
+      <div class="containerUser">
+        <div class="leftUser">
+          <img
+            src="https://ih1.redbubble.net/image.5576869615.1692/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.webp"
+            alt="Foto de Perfil del Usuario"
+            class="imgUser"
+          />
+          <p>Nombre del Usuario</p>
+        </div>
+        <div class="rightUser">
+          <form action="" class="editUser">
+            <section class="userData">
+              <p>Datos del Usuario</p>
+              <div class="campo">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" />
+              </div>
+              <div class="campo">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" />
+              </div>
+              <div class="campo">
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" />
+              </div>
+            </section>
+
+            <section class="userMail">
+              <p>Correo Electrónico</p>
+              <div class="campo">
+                <label for="correo">Cambiar Correo:</label>
+                <input type="email" name="correo" id="correo" />
+              </div>
+            </section>
+
+            <section class="userPassword">
+              <p>Cambiar Contraseña</p>
+              <div class="campo">
+                <label for="currentPass">Contraseña Actual:</label>
+                <input type="password" id="currentPass" />
+              </div>
+              <div class="campo">
+                <label for="newPass">Nueva Contraseña:</label>
+                <input type="password" id="newPass" />
+              </div>
+              <div class="campo">
+                <label for="confirmNewPass">Confirmar Contraseña:</label>
+                <input type="password" id="confirmNewPass" />
+              </div>
+            </section>
+
+            <div class="accionesPerfil">
+              <button type="submit" class="btn btnAccion">Guardar</button>
+              <a href="./perfilUsuario.html" class="btn btnAccion">Cancelar</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer">
+        <div class="logoFooter">
+          <!-- Logo Tennis -->
+          <ion-icon name="tennisball-outline"></ion-icon>
+        </div>
+        <div class="contacto">
+          <p class="footerTitulos">Contacto</p>
+          <a href="mailto:pumaf@gmail.com">pumaf@gmail.com</a>
+          <a href="tel: 555-555-5555">Tel: 555-555-5555</a>
+          <address>Rodriguez 432 - Mendoza</address>
+        </div>
+        <div class="preguntasFrecuentes">
+          <p class="footerTitulos">FAQ</p>
+          <a href="./faq.html#nosotros">Sobre Nosotros</a>
+          <a href="./faq.html#reservasCanchas">Reservas y Canchas</a>
+          <a href="./faq.html#pagosCanchas">Pagos y Canchas</a>
+          <a href="./faq.html#otrasPreguntas">Otras Preguntas</a>
+        </div>
+        <div class="social">
+          <p class="footerTitulos">
+            ¿Quieres Recibir nuestras últimas novedades?
+          </p>
+          <form action="" class="novedadesFormulario">
+            <input type="email" placeholder="correo@ejemplo.com" />
+            <button type="submit">Suscribirse</button>
+          </form>
+          <p class="footerTitulos">Nuestras Redes</p>
+          <div class="redes">
+            <a href="https://www.facebook.com" target="_blank"
+              ><ion-icon name="logo-facebook"></ion-icon
+            ></a>
+            <a href="https://www.instagram.com" target="_blank"
+              ><ion-icon name="logo-instagram"></ion-icon
+            ></a>
+            <a href="https://x.com" target="_blank"
+              ><ion-icon name="logo-twitter"></ion-icon
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="legal">PUMAF 2025 &copy; Todos los Derechos Reservados</div>
+    </footer>
+    <!-- Enlace Ionicons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

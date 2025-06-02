@@ -1,0 +1,541 @@
+:root {
+  --colorPrincipal: #4f002d;
+  --colorSecundario: #6d004a;
+  /* --colorBackground: #a38f9b; */
+  --colorBackground: #e0d0d8;
+  --colorTexto: #fff;
+  --colorTextoSecundario: #222;
+  --colorFondoForms: #fff;
+}
+
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Formularios */
+.inputForms {
+}
+
+/* === Botones === */
+.btn {
+  cursor: pointer;
+  width: fit-content;
+  padding: 0.8rem;
+  border-radius: 10px;
+}
+
+/* === CSS Header === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--colorPrincipal);
+}
+
+.logoPumaf {
+  width: 100%;
+  max-width: 75px;
+}
+
+.linksPumaf {
+  display: flex;
+  /* gap: 20px; */
+  align-items: center;
+  list-style: none;
+}
+
+.linksPumaf li a {
+  color: var(--colorTexto);
+  padding: 1rem;
+}
+
+.imagenHeader {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  object-fit: cover;
+  display: block;
+  margin-right: 1rem;
+}
+
+/* === CSS Footer === */
+footer {
+  background-color: var(--colorPrincipal);
+  color: var(--colorTexto);
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.legal {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.logoFooter {
+  margin: auto;
+}
+
+.logoFooter ion-icon {
+  font-size: 5rem;
+}
+
+.footerTitulos {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.contacto,
+.preguntasFrecuentes {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contacto a,
+.preguntasFrecuentes a {
+  color: var(--colorTexto);
+}
+
+.novedadesFormulario input,
+.novedadesFormulario button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.novedadesFormulario button {
+  cursor: pointer;
+  background-color: var(--colorSecundario);
+  color: var(--colorTexto);
+}
+
+.redes {
+  display: flex;
+  font-size: 2rem;
+  gap: 20px;
+}
+
+.redes ion-icon {
+  color: var(--colorTexto);
+}
+
+/* todo === CSS Index === */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.hero h2 {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero img {
+  max-width: 1000px;
+}
+
+.beneficios {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.beneficios h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #59002a;
+}
+
+.beneficio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.beneficio-grid .item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.beneficio-grid .item span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+/* === CSS Login y Register === */
+.background {
+  background-color: var(--colorBackground);
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 1rem 0;
+}
+
+.formCampo h1,
+.formCampo h2,
+.formCampo h3,
+.formCampo .btn {
+  margin: 0 auto;
+}
+
+.formCampo {
+  background-color: var(--colorFondoForms);
+  border-radius: 10px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem auto;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.formLogin {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 800px;
+}
+
+.formLogin input {
+  background-color: var(--colorBackground);
+  padding: 0.5rem;
+  border: 1px solid var(--colorBackground);
+  border-radius: 10px;
+  color: var(--colorTextoSecundario);
+}
+
+.btnForm {
+  color: var(--colorTexto);
+  border: 1px solid var(--colorSecundario);
+  background-color: var(--colorSecundario);
+}
+
+.forgotPass {
+  padding: 0.5rem 0;
+  text-align: center;
+  text-decoration: underline;
+  color: var(--colorTextoSecundario);
+}
+
+.btnGoogle {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  border: 1px solid var(--colorSecundario);
+  background-color: var(--colorSecundario);
+  color: var(--colorTexto);
+}
+
+.btnGoogle ion-icon {
+  font-size: 1.3rem;
+}
+
+.nombreUsuario,
+.datosUsuario {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nombreUsuario input,
+.datosUsuario input {
+  width: 100%;
+  max-width: 200px;
+}
+
+.termsConditions {
+  text-decoration: underline;
+}
+
+/* === CSS Reservas === */
+.mainReservas {
+  background-image: url("../img/reservasBackground.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  color: var(--colorTextoSecundario);
+  position: relative;
+}
+
+.mainReservas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 0;
+}
+
+.mainReservas h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.mainReservas p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+}
+
+.buscador {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.buscador input,
+.buscador select,
+.buscador button {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.buscador button {
+  background-color: var(--colorPrincipal);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.buscador button:hover {
+  background-color: var(--colorSecundario);
+}
+
+/* === CSS Usuario === */
+.containerUser {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  margin: 5rem 0;
+}
+
+.leftUser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.leftUser a {
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: underline;
+  color: blue;
+}
+
+.leftUser a:active {
+  color: blue;
+}
+
+.imgUser {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 5px solid var(--colorSecundario);
+}
+
+.rightUser {
+  background-color: var(--colorFondoForms);
+  padding: 2rem 20rem 2rem 2rem;
+  border-radius: 20px;
+}
+
+.itemData {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--colorBackground);
+}
+
+.itemData:last-child {
+  border-bottom: none;
+}
+
+.itemData .value {
+  color: #777;
+}
+
+.editUser {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.userData,
+.userMail,
+.userPassword {
+  margin-bottom: 20px;
+}
+
+.campo {
+  margin-bottom: 10px;
+}
+
+.campo label {
+  display: inline-block;
+  width: 100%;
+  max-width: 200px;
+}
+
+.campo input {
+  display: inline-block;
+  border: 1px solid var(--colorTextoSecundario);
+  border-radius: 10px;
+  width: 220px;
+  padding: 5px;
+}
+
+.btnAccion {
+  border: 1px solid var(--colorSecundario);
+  background-color: var(--colorSecundario);
+  color: var(--colorTexto);
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+/* === CSS Preguntas Frecuentes === */
+.faq {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: var(--colorFondoForms);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--colorTextoSecundario);
+}
+
+.faqItem {
+  margin-bottom: 1.5rem;
+}
+
+.faqItem h3 {
+  color: var(--colorTextoSecundario);
+  margin-bottom: 0.5rem;
+}
+
+.faqItem p {
+  color: var(--colorTextoSecundario);
+  line-height: 1.6;
+}
+
+/* === CSS Términos y Condiciones === */
+.terminos {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: var(--colorFondoForms);
+  border-radius: 12px;
+  color: var(--colorTextoSecundario);
+}
+
+.terminos h1 {
+  font-size: 2.2rem;
+  color: var(--colorTextoSecundario);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.terminos h2 {
+  font-size: 1.4rem;
+  color: var(--colorTextoSecundario);
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.terminos p,
+.terminos ul {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.terminos ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.terminos p:last-child {
+  font-style: italic;
+  text-align: right;
+  color: #555;
+}
+
+/* === CSS Recuperar Password === */
+.recuperarPassword {
+  background-color: var(--colorFondoForms);
+  max-width: 800px;
+  margin: 5rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recuperarPassword form input {
+  background-color: var(--colorBackground);
+  padding: 0.5rem;
+  border: 1px solid var(--colorBackground);
+  border-radius: 10px;
+  color: var(--colorTextoSecundario);
+}
+
+.recuperarPassword form button {
+  color: var(--colorTexto);
+  border: 1px solid var(--colorSecundario);
+  background-color: var(--colorSecundario);
+  border-radius: 10px;
+  cursor: pointer;
+}
