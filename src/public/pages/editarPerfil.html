@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/master.css" />
-    <title>Conifgurar Perfil - PUMAF</title>
+    <title>Configurar Perfil - PUMAF</title>
   </head>
   <body>
     <header>
@@ -24,12 +24,18 @@
     <main class="background">
       <div class="containerUser">
         <div class="leftUser">
-          <img
-            src="https://ih1.redbubble.net/image.5576869615.1692/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.webp"
-            alt="Foto de Perfil del Usuario"
-            class="imgUser"
-          />
+          <div class="containerImg">
+            <button class="btn editImgUser">
+              <ion-icon name="pencil-outline"></ion-icon>
+            </button>
+            <img
+              src="https://ih1.redbubble.net/image.5576869615.1692/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.webp"
+              alt="Foto de Perfil del Usuario"
+              class="imgUser"
+            />
+          </div>
           <p>Nombre del Usuario</p>
+          <a href="./perfilUsuario.html" class="btn btnAccion">Cancelar</a>
         </div>
         <div class="rightUser">
           <form action="" class="editUser">
@@ -75,7 +81,6 @@
 
             <div class="accionesPerfil">
               <button type="submit" class="btn btnAccion">Guardar</button>
-              <a href="./perfilUsuario.html" class="btn btnAccion">Cancelar</a>
             </div>
           </form>
         </div>

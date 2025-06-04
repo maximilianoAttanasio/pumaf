@@ -27,8 +27,6 @@ a {
 }
 
 /* Formularios */
-.inputForms {
-}
 
 /* === Botones === */
 .btn {
@@ -176,7 +174,7 @@ footer {
   background-color: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .beneficio-grid .item span {
@@ -184,7 +182,6 @@ footer {
   display: block;
   margin-bottom: 10px;
 }
-
 
 /* === CSS Login y Register === */
 .background {
@@ -361,17 +358,6 @@ footer {
   gap: 15px;
 }
 
-.leftUser a {
-  font-size: 1rem;
-  text-align: center;
-  text-decoration: underline;
-  color: blue;
-}
-
-.leftUser a:active {
-  color: blue;
-}
-
 .imgUser {
   width: 180px;
   height: 180px;
@@ -439,6 +425,24 @@ footer {
   color: var(--colorTexto);
   padding: 1rem;
   font-size: 1rem;
+}
+
+.containerImg {
+  position: relative;
+  display: inline-block;
+}
+
+.editImgUser {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 1;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--colorSecundario);
+  color: var(--colorTexto);
+  font-size: 1.5rem;
 }
 
 /* === CSS Preguntas Frecuentes === */
@@ -538,4 +542,280 @@ footer {
   background-color: var(--colorSecundario);
   border-radius: 10px;
   cursor: pointer;
+}
+
+/*  */
+
+.textosConfirmar {
+  padding: 2rem 0 0 5rem;
+}
+
+.resumenTurno,
+.datosUsuarioReserva,
+.aclaracionReserva {
+  border: 1px solid #222;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.formReserva {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  grid-template-rows: auto auto auto;
+  gap: 1.5rem;
+  margin: auto;
+  padding: 2rem 5rem;
+}
+
+.resumenTurno {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+}
+
+.datosUsuarioReserva {
+  grid-column: 2 / 3;
+  grid-row: 1;
+}
+
+.aclaracionReserva {
+  grid-column: 2 / 3;
+  grid-row: 2;
+}
+
+.btnConfirmarCancha {
+  grid-column: 2 / 3;
+  grid-row: 3;
+  text-align: right;
+}
+
+.btnEnvio {
+  background-color: var(--colorSecundario);
+  color: var(--colorTexto);
+  border: 1px solid transparent;
+}
+
+.resumenTurno h2 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.fila {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detalle ion-icon {
+  margin-right: 0.5rem;
+}
+
+.resumenTurno {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.infoDatosReserva {
+  display: flex;
+  gap: 2rem;
+}
+
+.grupoInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.grupoInfo input {
+  background-color: var(--colorBackground);
+  padding: 0.5rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.aclaracionReserva p {
+  background-color: var(--colorBackground);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.aclaracionReserva h2,
+.aclaracionReserva ion-icon {
+  display: inline-block;
+}
+
+.aclaracionReserva ion-icon {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.cancha p {
+  margin: 0.5rem 1.5rem;
+}
+
+.precioCancha {
+  display: flex;
+  justify-content: space-between;
+}
+
+.opcionesPago {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.selectorOpcion {
+  border: 1px solid var(--colorBackground);
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.selectorOpcion input[type="radio"] {
+  display: none;
+}
+
+.selectorOpcion .selectorRadio {
+  text-align: left;
+}
+
+.selectorOpcion:hover {
+  border-color: var(--coo);
+  background-color: var(--colorBackground);
+}
+
+.selectorRadio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infoOpcion {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Puede no funcionar en todos los navegadores */
+.selectorOpcion:has(input[type="radio"]:checked) {
+  border-color: var(--colorPrincipal);
+  background-color: var(--colorBackground);
+}
+
+/* CSS Canchas */
+.cards {
+  padding: 5rem;
+}
+
+.cardCancha {
+  max-width: 350px;
+  border-radius: 10px;
+  background-color: var(--colorFondoForms);
+  border: 1px solid #000;
+  overflow: hidden;
+}
+
+.cardBody {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cardBody span {
+  text-align: right;
+  margin-right: 1rem;
+}
+
+.buttonsTurno button {
+  border-radius: 20px;
+  padding: 5px;
+  font-size: 0.6rem;
+  border: 1px solid var(--colorBackground);
+}
+
+.buttonsTurno button:hover {
+  background-color: var(--colorBackground);
+}
+
+/* === CSS Club === */
+.container {
+  max-width: 1200px;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container img {
+  border-radius: 10px;
+}
+
+.selectTurno {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.infoTurno {
+  border: 1px solid #000;
+  width: fit-content;
+  padding: .5rem 1rem;
+  border-radius: 10px;
+}
+
+.infoTurno ion-icon {
+  font-size: 1.2rem;
+}
+
+.acordeon {
+  border: 1px solid var(--colorBackground);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  /* background: var(--colorFondoForms); */
+  max-width: 500px;
+}
+
+.acordeon p {
+  margin-bottom: 1rem;
+}
+
+.acordeon p:last-child {
+  margin-bottom: 0;
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.ubicacionClub {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "titulo titulo"
+    "mapa info";
+  gap: 2rem;
+}
+
+.ubicacionClub h2 {
+  grid-area: titulo;
+}
+
+.ubicacionClub iframe {
+  grid-area: mapa;
+}
+
+.infoClub {
+  grid-area: info;
 }

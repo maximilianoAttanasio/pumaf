@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/master.css" />
+    <title>Confirmar Cancha</title>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">
+        <img class="logoPumaf" src="../img/logo.webp" alt="Logo PUMAF" />
+      </a>
+      <nav>
+        <ul class="linksPumaf">
+          <li><a href="#">Item 1</a></li>
+          <li><a href="./reservas.html">Reservas</a></li>
+          <li><a href="./login.html">Iniciar Sesión</a></li>
+          <li><a href="./registro.html">Registrarse</a></li>
+          <li>
+            <a href="./perfilUsuario.html"
+              ><img
+                src="https://placehold.co/100x100"
+                alt="Perfil usuario"
+                class="imagenHeader"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="textosConfirmar">
+        <h1>Ya casi terminamos</h1>
+        <p>
+          Para completar tu reserva, por favor chequea los datos y luego
+          confirma
+        </p>
+      </div>
+      <form action="" class="formReserva">
+        <section class="resumenTurno">
+          <h2>Futbol</h2>
+          <hr class="divider" />
+          <h3>Al cubo</h3>
+          <div class="detalle">
+            <p>
+              <ion-icon name="compass-outline"></ion-icon>Boedo y Acceso Sur,
+              Luján de Cuyo
+            </p>
+          </div>
+          <div class="detalle fila">
+            <span
+              ><ion-icon name="calendar-number-outline"></ion-icon>Fecha</span
+            >
+            <p>Mar. 03/06/2025</p>
+          </div>
+          <div class="detalle fila">
+            <span><ion-icon name="time-outline"></ion-icon>Hora</span>
+            <p>18:00 - 19:30</p>
+          </div>
+          <div class="detalle cancha">
+            <span
+              ><ion-icon name="tennisball-outline"></ion-icon>Cancha 2 Padel -
+              Padel</span>
+            <p>Blindex y sintético, Con iluminación, Descubierta</p>
+          </div>
+          <hr class="divider" />
+          <div class=" detalle precioCancha">
+            <p>
+              <ion-icon name="cash-outline"></ion-icon>Precio
+            </p>
+            <span>$24.000</span>
+          </div>
+          <div class="opcionesPago">
+            <label class="selectorOpcion">
+              <input type="radio" name="tipoPago" value="adelanto" checked />
+              <div class="selectorRadio">
+                <div class="infoOpcion">
+                  <strong>Anticipo / Adelanto:</strong>
+                  <span>(50% del valor del turno)</span>
+                </div>
+                <div class="precioOpcion"><span>$12.000</span></div>
+              </div>
+            </label>
+            <label class="selectorOpcion">
+              <input type="radio" name="tipoPago" value="completo" />
+              <div class="selectorRadio">
+                <div class="infoOpcion">
+                  <strong>Total:</strong>
+                  <span>(100% del valor del turno)</span>
+                </div>
+                <div class="precioOpcion"><span>$24.000</span></div>
+              </div>
+            </label>
+          </div>
+        </section>
+        <section class="datosUsuarioReserva">
+          <h2>Información Personal</h2>
+          <hr class="divider" />
+          <div class="infoDatosReserva">
+            <div class="grupoInfo">
+              <label for="name">Nombre:</label>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div class="grupoInfo">
+              <label for="cellphone">Teléfono:</label>
+              <input type="number" name="cellphone" id="cellphone" />
+            </div>
+            <div class="grupoInfo">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" />
+            </div>
+          </div>
+        </section>
+        <section class="aclaracionReserva">
+          <h2>Sobre el Pago</h2>
+          <ion-icon name="warning-outline"></ion-icon>
+          <hr class="divider" />
+          <p>
+            <strong>IMPORTANTE:</strong> Sólo se debitará el importe del
+            Anticipo / Adelanto. En el complejo abonarás el saldo restante del
+            valor total del turno (si lo hubiere). En caso de que canceles con
+            más de 12hs de anticipación, se reintegrará el importe de la seña de
+            manera automática.
+          </p>
+        </section>
+        <section class="btnConfirmarCancha">
+          <button type="submit" class="btn btnEnvio">Continuar</button>
+        </section>
+      </form>
+    </main>
+    <footer>
+      <div class="footer">
+        <div class="logoFooter">
+          <!-- Logo Tennis -->
+          <ion-icon name="tennisball-outline"></ion-icon>
+        </div>
+        <div class="contacto">
+          <p class="footerTitulos">Contacto</p>
+          <a href="mailto:pumaf@gmail.com">pumaf@gmail.com</a>
+          <a href="tel: 555-555-5555">Tel: 555-555-5555</a>
+          <address>Rodriguez 432 - Mendoza</address>
+        </div>
+        <div class="preguntasFrecuentes">
+          <p class="footerTitulos">FAQ</p>
+          <a href="./faq.html#nosotros">Sobre Nosotros</a>
+          <a href="./faq.html#reservasCanchas">Reservas y Canchas</a>
+          <a href="./faq.html#pagosCanchas">Pagos y Canchas</a>
+          <a href="./faq.html#otrasPreguntas">Otras Preguntas</a>
+        </div>
+        <div class="social">
+          <p class="footerTitulos">
+            ¿Quieres Recibir nuestras últimas novedades?
+          </p>
+          <form action="" class="novedadesFormulario">
+            <input type="email" placeholder="correo@ejemplo.com" />
+            <button type="submit">Suscribirse</button>
+          </form>
+          <p class="footerTitulos">Nuestras Redes</p>
+          <div class="redes">
+            <a href="https://www.facebook.com" target="_blank"
+              ><ion-icon name="logo-facebook"></ion-icon
+            ></a>
+            <a href="https://www.instagram.com" target="_blank"
+              ><ion-icon name="logo-instagram"></ion-icon
+            ></a>
+            <a href="https://x.com" target="_blank"
+              ><ion-icon name="logo-twitter"></ion-icon
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="legal">PUMAF 2025 &copy; Todos los Derechos Reservados</div>
+    </footer>
+    <!-- Enlace Ionicons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
