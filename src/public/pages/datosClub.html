@@ -18,7 +18,7 @@
           <li><a href="./login.html">Iniciar Sesión</a></li>
           <li><a href="./registro.html">Registrarse</a></li>
           <li>
-            <a href="./perfilUsuario.html"
+            <a href="./perfilUsuario.html?userId=40972817"
               ><img
                 src="https://placehold.co/100x100"
                 alt="Perfil usuario"
@@ -30,7 +30,7 @@
     </header>
     <main>
       <div class="container">
-        <img src="https://placehold.co/1000x600" alt="" />
+        <img id="imagenClub" src="https://placehold.co/1000x600" alt="" />
         <section class="datosClub">
           <h1>El Ombu</h1>
           <p class="detalle">
@@ -147,5 +147,75 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+      <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Obtener clubId de la URL
+      const params = new URLSearchParams(window.location.search);
+      const clubId = params.get('clubId');
+      if (!clubId) {
+        console.error('No se recibió clubId en la URL');
+        return;
+      }
+
+      // 2. Recuperar datos del club desde sessionStorage
+      const clubKey = `club_${clubId}`;
+      const clubData = JSON.parse(sessionStorage.getItem(clubKey) || 'null');
+      if (!clubData) {
+        console.error(`No hay datos para ${clubKey} en sessionStorage`);
+        return;
+      }
+
+      // 3. Referencias a elementos del DOM
+      const logoEl      = document.querySelector('#imagenClub');
+      const titleEl     = document.querySelector('.datosClub h1');
+      const addressEl   = document.querySelector('.datosClub .detalle');
+      const mapIframe   = document.querySelector('.ubicacionClub iframe');
+      const infoUbicEl  = document.querySelector('.infoClub details:nth-of-type(1) p');
+      const infoHorasEl = document.querySelector('.infoClub details:nth-of-type(2)');
+      const infoServEl  = document.querySelector('.infoClub details:nth-of-type(3) ul');
+
+      // 4. Poner logo (si existe)
+      if (logoEl && clubData.logo) {
+        logoEl.src = clubData.logo;
+        logoEl.alt = clubData.nombre_fantasia;
+      }
+
+      // 5. Nombre y dirección
+      titleEl.textContent = clubData.nombre_fantasia || 'Sin nombre';
+      const dom = clubData.domicilio || {};
+      const direccionTexto = [
+        dom.calle,
+        dom.numeracion,
+        dom.localidad.localidad,
+        dom.localidad.provincia.provincia,
+        dom.localidad.provincia.pais.pais,
+      ].filter(Boolean).join(', ');
+      addressEl.innerHTML = `<ion-icon name="compass-outline"></ion-icon> ${direccionTexto}`;
+
+      // 6. Mapa: generar enlace de Google Maps con la dirección
+      const query = encodeURIComponent(direccionTexto);
+      mapIframe.src = `https://www.google.com/maps/embed/v1/place?key=TU_API_KEY&q=${query}`;
+
+      // 7. Ubicación detallada
+      infoUbicEl.textContent = direccionTexto;
+
+      // 8. Horarios del club (si vienen en el JSON)
+      if (clubData.horarios_club && clubData.horarios_club.length) {
+        // Limpiamos y construimos nuevos <p>
+        infoHorasEl.innerHTML = `
+          <summary>Horarios del Club</summary>
+          <hr class="divider" />
+          ${clubData.horarios_club.map(h => `<p>${h}</p>`).join('')}
+        `;
+      }
+
+      // 9. Servicios del club (si vienen en el JSON)
+      if (clubData.servicios && clubData.servicios.length) {
+        infoServEl.innerHTML = clubData.servicios
+          .map(s => `<li><ion-icon name="${s.icon}"></ion-icon> ${s.nombre}</li>`)
+          .join('');
+      }
+    });
+  </script>
   </body>
 </html>

@@ -15,7 +15,7 @@
           <li><a href="./reservas.html">Reservas</a></li>
           <li><a href="./login.html">Iniciar Sesión</a></li>
           <li><a href="./registro.html">Registrarse</a></li>
-          <li><a href="./perfilUsuario.html"><img src="https://placehold.co/100x100" alt="Perfil usuario" class="imagenHeader"></a></li>
+          <li><a href="./perfilUsuario.html?userId=40972817"><img src="https://placehold.co/100x100" alt="Perfil usuario" class="imagenHeader"></a></li>
         </ul>
       </nav>
     </header>
@@ -72,12 +72,88 @@
     <!-- Enlace Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script type="module" >
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const basic = btoa("admin:admin123");
+        const res = await fetch('http://localhost:8081/deportes', {
+          method: 'GET',
+          credentials: 'include',            // si usas cookies/sesión
+          headers: {
+            Authorization: `Basic ${basic}`,
+            "Content-Type": "application/json",
+    },
+        });
+        if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+
+        const deportes = await res.json();  // asume [{ id:1, deporte:"Fútbol" }, …]
+        const select = document.getElementById('selectorDeporte');
+
+        deportes.forEach(d => {
+          const opt = document.createElement('option');
+          opt.value = d.id;
+          opt.textContent = d.deporte;
+          select.appendChild(opt);
+        });
+
+      } catch (err) {
+        console.error('Error al cargar deportes:', err);
+      }
+    }); 
+
+    document.getElementById("botonSelector").addEventListener("click", async () => {
+      const deporteId = document.getElementById("selectorDeporte").value;
+      const ciudad = document.querySelector(".buscador input[type='text']").value;
+      const fecha = document.querySelector(".buscador input[type='date']").value;
+      const hora = document.querySelector(".buscador input[type='time']").value;
+
+      if (!deporteId) {
+        alert("Por favor, completa El deporte.");
+        return;
+      }
+
+      try {
+        const basic = btoa("admin:admin123");
+        const response = await fetch(`http://localhost:8081/canchas/byDeporte/${deporteId}`, {
+          method: 'GET',
+          credentials: 'include',            // si usas cookies/sesión
+          headers: {
+            Authorization: `Basic ${basic}`,
+            "Content-Type": "application/json",
+        },
+        });
+        if (!response.ok) throw new Error(response.status + ' ' + response.statusText);
+
+        const canchas = await response.json();
+
+        sessionStorage.setItem('canchas', JSON.stringify(canchas));
+
+        window.location.href = 'http://localhost:3001/pages/busquedaCanchas.html';
+        
+      } catch (error) {
+        console.error('Error al buscar canchas:', error);
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <script type="module" >
       import { getDeportes } from '/dist/services/FuncionesApi.js';
 
-  document.getElementById('botonSelector').addEventListener('click', async () => {
-    const deps = await getDeportes();
-    console.log(deps);
-  });
-    </script>
+      document.getElementById('botonSelector').addEventListener('click', async () => {
+        const deps = await getDeportes();
+        console.log(deps);
+      });
+    </script> -->
 </html>
