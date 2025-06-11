@@ -25,15 +25,12 @@
         <p>Explora las canchas disponibles en tu ciudad y en tiempo real.</p>
         <div class="buscador">
           <input type="text" placeholder="Buscar Ciudad" />
-          <select>
-            <option>Seleccione un deporte</option>
-            <option>Fútbol</option>
-            <option>Tenis</option>
-            <option>Padel</option>
+          <select id="selectorDeporte" class="selector">
+            <option value="">Seleccione un deporte</option>
           </select>
           <input type="date" />
           <input type="time" />
-          <button class="btn">Buscar canchas</button>
+          <button id="botonSelector" class="btn">Buscar canchas</button>
         </div>
       </div>
     </main>
@@ -75,5 +72,12 @@
     <!-- Enlace Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  </body>
+    <script type="module" >
+      import { getDeportes } from '/dist/services/FuncionesApi.js';
+
+  document.getElementById('botonSelector').addEventListener('click', async () => {
+    const deps = await getDeportes();
+    console.log(deps);
+  });
+    </script>
 </html>
