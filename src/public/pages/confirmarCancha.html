@@ -125,6 +125,7 @@
         </section>
         <section class="btnConfirmarCancha">
           <button type="submit" class="btn btnEnvio">Continuar</button>
+          <!-- <button id="btnPay" class="btn btnEnvio">Pagar</button> -->
         </section>
       </form>
     </main>
@@ -180,5 +181,47 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <!-- 1) Incluí el SDK -->
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+
+<script>
+  // 2) Inicializás el cliente de Mercado Pago con tu Public Key (sandbox o prod)
+  const mp = new MercadoPago("APP_USR-fd119ed2-243c-4ada-96a3-f6d8a7df93ea", {
+    locale: 'es-AR'
+  });
+
+  document.querySelector('.formReserva').addEventListener('submit', async e => {
+    e.preventDefault();                  // evita recarga
+    const tipoPago = document.querySelector('input[name=tipoPago]:checked').value;
+    const precioTotal = 24000;           // o calculalo dinámicamente del DOM
+    const monto = tipoPago === 'adelanto'
+      ? precioTotal * 0.5
+      : precioTotal;
+
+    // 3) Armás tu payload (podés incluir los datos del usuario también)
+    const payload = {
+      monto,
+      descripcion: 'Reserva Cancha PUMAF',
+      // …otros campos que quieras guardar
+    };
+
+    // 4) Llamás a tu endpoint que crea la preferencia
+    const resp = await fetch('http://localhost:8081/pagos/preference', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + btoa('admin:admin123')
+      },
+      body: JSON.stringify(payload)
+    });
+    const { url  } = await resp.json();  // debe devolver el ID de preferencia
+    console.log('✅ Preferencia creada:', url );
+   window.open(url , '_blank');
+
+
+  });
+</script>
+
   </body>
 </html>
