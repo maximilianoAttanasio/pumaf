@@ -180,5 +180,32 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cancha = JSON.parse(sessionStorage.getItem("canchaSeleccionada") || '{}');
+
+    if (!cancha || !cancha.club) {
+      document.querySelector("main").innerHTML = "<p>No se encontró la información de la cancha.</p>";
+      return;
+    }
+
+    // Actualizá los elementos con los datos
+    document.querySelector("h2").textContent = cancha.deporte?.deporte || "Deporte";
+    document.querySelector("h3").textContent = cancha.club?.nombre_fantasia || "Club";
+    document.querySelector(".detalle p").textContent = `${cancha.club.domicilio.calle || ''} ${cancha.club.domicilio.numeracion || 'No se pudo obtener dirección'}`;
+
+    document.querySelectorAll(".detalle.fila")[0].querySelector("p").textContent = "Fecha pendiente"; // Podés completar después
+    document.querySelectorAll(".detalle.fila")[1].querySelector("p").textContent = "Hora pendiente";  // Igual que arriba
+
+    document.querySelector(".detalle.cancha span").textContent = `Cancha #${cancha.nro_cancha} - ${cancha.deporte?.deporte || ''}`;
+    document.querySelector(".detalle.cancha p").textContent = `${cancha.tipo_superficie?.tipo_superficie || ''}, ${cancha.techada ? 'Cubierta' : 'Al aire libre'}`;
+
+    document.querySelector(".precioCancha span").textContent = `$${cancha.precio}`;
+
+    document.querySelectorAll(".precioOpcion span")[0].textContent = `$${Math.floor(cancha.precio / 2)}`;
+    document.querySelectorAll(".precioOpcion span")[1].textContent = `$${cancha.precio}`;
+  });
+</script>
+
   </body>
 </html>
