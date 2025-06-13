@@ -29,7 +29,7 @@
             <option value="">Seleccione un deporte</option>
           </select>
           <input type="date" />
-          <input type="time" />
+          <!-- <input type="time" /> -->
           <button id="botonSelector" class="btn">Buscar canchas</button>
         </div>
       </div>
@@ -105,7 +105,7 @@
       const deporteId = document.getElementById("selectorDeporte").value;
       const ciudad = document.querySelector(".buscador input[type='text']").value;
       const fecha = document.querySelector(".buscador input[type='date']").value;
-      const hora = document.querySelector(".buscador input[type='time']").value;
+      // const hora = document.querySelector(".buscador input[type='time']").value;
 
       if (!deporteId) {
         alert("Por favor, completa El deporte.");
@@ -127,6 +127,8 @@
         const canchas = await response.json();
 
         sessionStorage.setItem('canchas', JSON.stringify(canchas));
+        sessionStorage.setItem('fechaSeleccionada', fecha);
+        // sessionStorage.setItem('horaSeleccionada', hora);
 
         window.location.href = 'http://localhost:3001/pages/busquedaCanchas.html';
         
@@ -134,19 +136,10 @@
         console.error('Error al buscar canchas:', error);
       }
     });
+    
+
   </script>
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
     <!-- <script type="module" >
       import { getDeportes } from '/dist/services/FuncionesApi.js';

@@ -240,8 +240,8 @@
             : ''
           }
           <div class="buttonsTurno">
-            ${ (c.horarios || []).map(h => 
-                `<button class="btn">${h}</button>`
+            ${ (c.turnos || []).map(h => 
+                `<button class="btn">${h.hora_inicio}</button>`
               ).join('')
             }
           </div>

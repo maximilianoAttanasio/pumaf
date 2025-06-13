@@ -226,6 +226,8 @@
     <script>
   document.addEventListener("DOMContentLoaded", () => {
     const cancha = JSON.parse(sessionStorage.getItem("canchaSeleccionada") || '{}');
+    const fecha = sessionStorage.getItem('fechaSeleccionada');
+    const hora = sessionStorage.getItem('horaSeleccionada');
 
     if (!cancha || !cancha.club) {
       document.querySelector("main").innerHTML = "<p>No se encontró la información de la cancha.</p>";
@@ -237,8 +239,8 @@
     document.querySelector("h3").textContent = cancha.club?.nombre_fantasia || "Club";
     document.querySelector(".detalle p").textContent = `${cancha.club.domicilio.calle || ''} ${cancha.club.domicilio.numeracion || 'No se pudo obtener dirección'}`;
 
-    document.querySelectorAll(".detalle.fila")[0].querySelector("p").textContent = "Fecha pendiente"; // Podés completar después
-    document.querySelectorAll(".detalle.fila")[1].querySelector("p").textContent = "Hora pendiente";  // Igual que arriba
+    document.querySelectorAll(".detalle.fila")[0].querySelector("p").textContent = fecha; // Podés completar después
+    document.querySelectorAll(".detalle.fila")[1].querySelector("p").textContent = hora;  // Igual que arriba
 
     document.querySelector(".detalle.cancha span").textContent = `Cancha #${cancha.nro_cancha} - ${cancha.deporte?.deporte || ''}`;
     document.querySelector(".detalle.cancha p").textContent = `${cancha.tipo_superficie?.tipo_superficie || ''}, ${cancha.techada ? 'Cubierta' : 'Al aire libre'}`;

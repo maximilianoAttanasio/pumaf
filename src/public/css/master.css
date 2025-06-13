@@ -705,6 +705,8 @@ footer {
 /* CSS Canchas */
 .cards {
   padding: 5rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .cardCancha {
@@ -747,29 +749,47 @@ footer {
 
 .modal {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
     background-color: rgba(0,0,0,0.6);
-    display: flex; align-items: center; justify-content: center;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
     z-index: 999;
   }
-  .modal.hidden { display: none; }
+
+  .modal.hidden { 
+    display: none; 
+  }
+
   .modal-content {
-    background: white;
+    background: var(--colorFondoForms);
     padding: 1rem;
     max-height: 90vh;
     overflow-y: auto;
     border-radius: 8px;
     width: 80%;
   }
+
+  .modal-content h2 {
+    padding-bottom: 1rem;
+  }
+
   .close {
     float: right;
     cursor: pointer;
     font-size: 1.5rem;
   }
+
   .cancha-item {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--colorBackground);
     padding: 0.5rem 0;
+  }
+
+  .cancha-item:last-child {
+    border-bottom: none;
   }
 
 /* === CSS Club === */
