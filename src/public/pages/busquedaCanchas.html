@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Búsqueda de Canchas - Refactorizada</title>
   <link rel="stylesheet" href="../css/master.css" />
+  <link rel="stylesheet" href="../css/busquedaCancha.css">
 </head>
 <body>
   <header>
@@ -78,11 +79,16 @@
         clubes.forEach(club => {
           const article = document.createElement('article');
           article.className = 'cardCancha';
-          article.dataset.clubId = club.id;  // para identificar en el fetch
-
+          article.dataset.clubId = club.id; 
           article.innerHTML = `
             <div class="cardHead">
-              <img src="${club.logo || 'https://placehold.co/350x200'}" alt="${club.nombre_fantasia}" />
+              <img 
+                src="${club.logo || 'https://placehold.co/350x200'}" 
+                alt="${club.nombre_fantasia}" 
+                class="club-logo"
+                data-club-id="${club.id}"
+                style="cursor:pointer"
+              />
             </div>
             <div class="cardBody">
               <h2>${club.nombre_fantasia}</h2>
@@ -93,6 +99,12 @@
               <button class="btn btnVerCanchas">Ver Canchas</button>
             </div>
           `;
+
+          const img = article.querySelector('.club-logo');
+          img.addEventListener('click', () => {
+            sessionStorage.setItem('clubSeleccionado', JSON.stringify(club));
+            window.location.href = 'datosClub.html';
+          });
 
           // Al hacer click, trae canchas del back
           article.querySelector('.btnVerCanchas').addEventListener('click', async () => {
@@ -119,49 +131,58 @@
       }
 
       // Función para renderizar las canchas y sus turnos
-function renderCanchas(canchas) {
-  if (canchas.length === 0) {
-    contenedorCanchas.innerHTML =
-      '<p>No hay canchas disponibles para esa fecha.</p>';
-    return;
-  }
+      function renderCanchas(canchas) {
+        if (canchas.length === 0) {
+          contenedorCanchas.innerHTML =
+            '<p>No hay canchas disponibles para esa fecha.</p>';
+          return;
+        }
 
-  contenedorCanchas.innerHTML = canchas.map(c => `
-    <div class="cancha-card" data-cancha-id="${c.id}">
-      <h3>Cancha ${c.nro_cancha}
-        (${c.tipo_superficie.tipo_superficie})
-      </h3>
-      <p>Techada: ${c.techada ? 'Sí' : 'No'}</p>
-      <div class="turnos">
-        ${c.turnos.map(t => t.disponible
-          ? `<button class="turno-btn" data-turno-id="${t.id}">
-               ${t.hora_inicio} - $${t.precio}
-             </button>`
-          : ``
-        ).join('')}
-      </div>
-    </div>
-  `).join('');
+        contenedorCanchas.innerHTML = canchas.map(c => `
+          <div class="cancha-card" data-cancha-id="${c.id}">
+            <h3>Cancha ${c.nro_cancha}
+              (${c.tipo_superficie.tipo_superficie})
+            </h3>
+            <p>Techada: ${c.techada ? 'Sí' : 'No'}</p>
+            <div class="turnos">
+              ${c.turnos.map(t => t.disponible
+                ? `<button class="turno-btn" data-turno-id="${t.id}">
+                    ${t.hora_inicio} - $${t.precio}
+                  </button>`
+                : ``
+              ).join('')}
+            </div>
+          </div>
+        `).join('');
 
-  // Ahora asociamos los botones con el array real de turnos
-  canchas.forEach((cancha) => {
-    const card = contenedorCanchas.querySelector(
-      `.cancha-card[data-cancha-id="${cancha.id}"]`
-    );
-    card.querySelectorAll('.turno-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const turnoId = btn.dataset.turnoId;
-        const turnoSel = cancha.turnos.find(t => String(t.id) === turnoId);
-        sessionStorage.setItem(
-          'turnoSeleccionado',
-          JSON.stringify(turnoSel)
-        );
-        window.location.href =
-          `confirmarCancha.html?turnoId=${turnoId}`;
-      });
-    });
-  });
-}
+        // Ahora asociamos los botones con el array real de turnos
+        canchas.forEach((cancha) => {
+          const card = contenedorCanchas.querySelector(
+            `.cancha-card[data-cancha-id="${cancha.id}"]`
+          );
+          card.querySelectorAll('.turno-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+              const turnoId = btn.dataset.turnoId;
+              const turnoSel = cancha.turnos.find(t => String(t.id) === turnoId);
+              const turnoCompleto = {
+              ...turnoSel,
+              cancha: {
+                id: cancha.id,
+                nro_cancha: cancha.nro_cancha,
+                techada: cancha.techada,
+                tipo_superficie: cancha.tipo_superficie,
+              },
+              club: cancha.club,
+              deporte: cancha.deporte
+            };
+            
+            sessionStorage.setItem('turnoSeleccionado', JSON.stringify(turnoCompleto));
+              window.location.href =
+                `confirmarCancha.html?turnoId=${turnoId}`;
+            });
+          });
+        });
+      }
     });
   </script>
 </body>

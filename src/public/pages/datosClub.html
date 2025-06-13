@@ -135,7 +135,7 @@
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const params = new URLSearchParams(window.location.search);
-        const clubId = params.get('clubId');
+        const clubId = params.get('clubSeleccionado');
         if (!clubId) return;
 
         const clubKey = `club_${clubId}`;

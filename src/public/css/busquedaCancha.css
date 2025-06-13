@@ -112,3 +112,13 @@
 .turno-btn:hover {
   background: #4500b5;
 }
+
+/* Filtro resumen */
+#filtroResumen {
+  background-color: #fff;
+  width: 90%;
+  padding: 1rem;
+  margin: 2rem 0 0 5rem;
+  font-size: 2rem;
+  border-radius: 10px;
+}
