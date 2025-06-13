@@ -1,159 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/master.css" />
-    <title>Reservas - PUMAF</title>
-  </head>
-  <body>
-    <header>
-      <a href="../index.html"><img class="logoPumaf" src="../img/logo.webp" alt="Logo PUMAF" /></a>
-      <nav>
-        <ul class="linksPumaf">
-          <li><a href="#">Item 1</a></li>
-          <li><a href="./reservas.html">Reservas</a></li>
-          <li><a href="./login.html">Iniciar Sesión</a></li>
-          <li><a href="./registro.html">Registrarse</a></li>
-          <li><a href="./perfilUsuario.html?userId=40972817"><img src="https://placehold.co/100x100" alt="Perfil usuario" class="imagenHeader"></a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="mainReservas">
-      <div class="contenido">
-        <h1>Reserva tu cancha al instante</h1>
-        <p>Explora las canchas disponibles en tu ciudad y en tiempo real.</p>
-        <div class="buscador">
-          <input type="text" placeholder="Buscar Ciudad" />
-          <select id="selectorDeporte" class="selector">
-            <option value="">Seleccione un deporte</option>
-          </select>
-          <input type="date" />
-          <input type="time" />
-          <button id="botonSelector" class="btn">Buscar canchas</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/master.css" />
+  <title>Reservas - PUMAF</title>
+</head>
+<body>
+  <header>
+    <a href="../index.html"><img class="logoPumaf" src="../img/logo.webp" alt="Logo PUMAF" /></a>
+    <nav>
+      <ul class="linksPumaf">
+        <li><a href="#">Item 1</a></li>
+        <li><a href="./reservas.html">Reservas</a></li>
+        <li><a href="./login.html">Iniciar Sesión</a></li>
+        <li><a href="./registro.html">Registrarse</a></li>
+        <li><a href="./perfilUsuario.html?userId=40972817"><img src="https://placehold.co/100x100" alt="Perfil usuario" class="imagenHeader"></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="mainReservas">
+    <div class="contenido">
+      <h1>Reserva tu cancha al instante</h1>
+      <p>Explora las canchas disponibles en tu ciudad y en tiempo real.</p>
+      <div class="buscador">
+        <select id="selectorDeporte" class="selector">
+          <option value="">Seleccione un deporte</option>
+        </select>
+        <select id="selectorLocalidad" class="selector">
+          <option value="">Seleccione una localidad</option>
+        </select>
+        <input type="date" />
+        <input type="time" />
+        <button id="botonSelector" class="btn">Buscar canchas</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer">
+      <div class="logoFooter"><ion-icon name="tennisball-outline"></ion-icon></div>
+      <div class="contacto">
+        <p class="footerTitulos">Contacto</p>
+        <a href="mailto:pumaf@gmail.com">pumaf@gmail.com</a>
+        <a href="tel: 555-555-5555">Tel: 555-555-5555</a>
+        <address>Rodriguez 432 - Mendoza</address>
+      </div>
+      <div class="preguntasFrecuentes">
+        <p class="footerTitulos">FAQ</p>
+        <a href="./faq.html#nosotros">Sobre Nosotros</a>
+        <a href="./faq.html#reservasCanchas">Reservas y Canchas</a>
+        <a href="./faq.html#pagosCanchas">Pagos y Canchas</a>
+        <a href="./faq.html#otrasPreguntas">Otras Preguntas</a>
+      </div>
+      <div class="social">
+        <p class="footerTitulos">¿Quieres Recibir nuestras últimas novedades?</p>
+        <form action="" class="novedadesFormulario">
+          <input type="email" placeholder="correo@ejemplo.com" />
+          <button type="submit">Suscribirse</button>
+        </form>
+        <p class="footerTitulos">Nuestras Redes</p>
+        <div class="redes">
+          <a href="https://www.facebook.com" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href="https://www.instagram.com" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="https://x.com" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
         </div>
       </div>
-    </main>
-    <footer>
-      <div class="footer">
-        <div class="logoFooter">
-          <!-- Logo Tennis -->
-          <ion-icon name="tennisball-outline"></ion-icon>
-        </div>
-        <div class="contacto">
-          <p class="footerTitulos">Contacto</p>
-          <a href="mailto:pumaf@gmail.com">pumaf@gmail.com</a>
-          <a href="tel: 555-555-5555">Tel: 555-555-5555</a>
-          <address>Rodriguez 432 - Mendoza</address>
-        </div>
-        <div class="preguntasFrecuentes">
-          <p class="footerTitulos">FAQ</p>
-          <a href="./faq.html#nosotros">Sobre Nosotros</a>
-          <a href="./faq.html#reservasCanchas">Reservas y Canchas</a>
-          <a href="./faq.html#pagosCanchas">Pagos y Canchas</a>
-          <a href="./faq.html#otrasPreguntas">Otras Preguntas</a>
-        </div>
-        <div class="social">
-          <p class="footerTitulos">¿Quieres Recibir nuestras últimas novedades?</p>
-          <form action="" class="novedadesFormulario">
-            <input type="email" placeholder="correo@ejemplo.com" />
-            <button type="submit">Suscribirse</button>
-          </form>
-          <p class="footerTitulos">Nuestras Redes</p>
-          <div class="redes">
-            <a href="https://www.facebook.com" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
-            <a href="https://www.instagram.com" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="https://x.com" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
-          </div>
-        </div>
-      </div>
-      <div class="legal">PUMAF 2025 &copy; Todos los Derechos Reservados</div>
-    </footer>
-    <!-- Enlace Ionicons -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </div>
+    <div class="legal">PUMAF 2025 &copy; Todos los Derechos Reservados</div>
+  </footer>
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
+      const basic = btoa("admin:admin123");
+
+      // Cargar deportes
       try {
-        const basic = btoa("admin:admin123");
-        const res = await fetch('http://localhost:8081/deportes', {
-          method: 'GET',
-          credentials: 'include',            // si usas cookies/sesión
+        const resDeporte = await fetch('http://localhost:8081/deportes', {
           headers: {
             Authorization: `Basic ${basic}`,
-            "Content-Type": "application/json",
-    },
+            "Content-Type": "application/json"
+          }
         });
-        if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
-
-        const deportes = await res.json();  // asume [{ id:1, deporte:"Fútbol" }, …]
-        const select = document.getElementById('selectorDeporte');
-
+        const deportes = await resDeporte.json();
+        const selectDep = document.getElementById('selectorDeporte');
         deportes.forEach(d => {
           const opt = document.createElement('option');
           opt.value = d.id;
           opt.textContent = d.deporte;
-          select.appendChild(opt);
+          selectDep.appendChild(opt);
         });
-
       } catch (err) {
-        console.error('Error al cargar deportes:', err);
+        console.error("Error cargando deportes", err);
       }
-    }); 
 
+      // Cargar localidades
+      try {
+        const resLoc = await fetch('http://localhost:8081/localidades', {
+          headers: {
+            Authorization: `Basic ${basic}`,
+            "Content-Type": "application/json"
+          }
+        });
+        const localidades = await resLoc.json();
+        const selectLoc = document.getElementById('selectorLocalidad');
+        localidades.forEach(l => {
+          const opt = document.createElement('option');
+          opt.value = l.id;
+          opt.textContent = l.localidad;
+          selectLoc.appendChild(opt);
+        });
+      } catch (err) {
+        console.error("Error cargando localidades", err);
+      }
+    });
+
+    // Buscar canchas
     document.getElementById("botonSelector").addEventListener("click", async () => {
       const deporteId = document.getElementById("selectorDeporte").value;
-      const ciudad = document.querySelector(".buscador input[type='text']").value;
+      const localidadId = document.getElementById("selectorLocalidad").value;
       const fecha = document.querySelector(".buscador input[type='date']").value;
       const hora = document.querySelector(".buscador input[type='time']").value;
 
-      if (!deporteId) {
-        alert("Por favor, completa El deporte.");
+      if (!deporteId || !localidadId) {
+        alert("Por favor seleccioná un deporte y una localidad.");
         return;
       }
 
       try {
         const basic = btoa("admin:admin123");
-        const response = await fetch(`http://localhost:8081/canchas/byDeporte/${deporteId}`, {
-          method: 'GET',
-          credentials: 'include',            // si usas cookies/sesión
+        const response = await fetch(`http://localhost:8081/clubes/filtros?deporteId=${deporteId}&localidadId=${localidadId}`, {
           headers: {
             Authorization: `Basic ${basic}`,
-            "Content-Type": "application/json",
-        },
+            "Content-Type": "application/json"
+          }
         });
+
         if (!response.ok) throw new Error(response.status + ' ' + response.statusText);
+        const clubes = await response.json();
 
-        const canchas = await response.json();
+        sessionStorage.setItem("clubes", JSON.stringify(clubes));
+        sessionStorage.setItem("fecha", fecha);
+        sessionStorage.setItem("hora", hora);
 
-        sessionStorage.setItem('canchas', JSON.stringify(canchas));
+        window.location.href = "busquedaCanchas.html";
 
-        window.location.href = 'http://localhost:3001/pages/busquedaCanchas.html';
-        
       } catch (error) {
-        console.error('Error al buscar canchas:', error);
+        console.error("Error al filtrar clubes:", error);
+        alert("No se pudieron buscar los clubes.");
       }
     });
   </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <script type="module" >
-      import { getDeportes } from '/dist/services/FuncionesApi.js';
-
-      document.getElementById('botonSelector').addEventListener('click', async () => {
-        const deps = await getDeportes();
-        console.log(deps);
-      });
-    </script> -->
+</body>
 </html>

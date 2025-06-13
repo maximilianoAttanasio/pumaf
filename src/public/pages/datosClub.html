@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/master.css" />
-    <title>Inicio - PUMAF</title>
+    <title>Club - PUMAF</title>
   </head>
   <body>
     <header>
@@ -18,26 +18,26 @@
           <li><a href="./login.html">Iniciar Sesión</a></li>
           <li><a href="./registro.html">Registrarse</a></li>
           <li>
-            <a href="./perfilUsuario.html?userId=40972817"
-              ><img
-                src="https://placehold.co/100x100"
-                alt="Perfil usuario"
-                class="imagenHeader"
-            /></a>
+            <a href="./perfilUsuario.html?userId=40972817">
+              <img src="https://placehold.co/100x100" alt="Perfil usuario" class="imagenHeader" />
+            </a>
           </li>
         </ul>
       </nav>
     </header>
+
     <main>
       <div class="container">
-        <img id="imagenClub" src="https://placehold.co/1000x600" alt="" />
+        <img id="imagenClub" src="https://placehold.co/1000x600" alt="Imagen del club" />
+
         <section class="datosClub">
-          <h1>El Ombu</h1>
-          <p class="detalle">
-            <ion-icon name="compass-outline"></ion-icon>Remedios de Escalada
-            3256, Gllen, Mendoza, Argentina.
+          <h1 id="nombreClub">Nombre del Club</h1>
+          <p id="direccionClub" class="detalle">
+            <ion-icon name="compass-outline"></ion-icon>
+            Dirección del club
           </p>
         </section>
+
         <section class="selectTurno">
           <h2>Elige tu turno</h2>
           <div class="buttonsTurno">
@@ -49,14 +49,16 @@
             <button class="btn">17.30hs</button>
           </div>
           <p class="detalle infoTurno">
-            <ion-icon name="information-circle-outline"></ion-icon>Las reservas
-            se pueden realizar hasta con seis días de antelación
+            <ion-icon name="information-circle-outline"></ion-icon>
+            Las reservas se pueden realizar hasta con seis días de antelación.
           </p>
         </section>
+
         <section class="ubicacionClub">
-          <h2>¿Donde estamos?</h2>
+          <h2>¿Dónde estamos?</h2>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.980259228777!2d-68.8367914!3d-32.92511979999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e0bdf974e0985%3A0xabf6e7b780515f29!2sRemedios%20de%20Escalada%203256%2C%20M5519%20Godoy%20Cruz%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1748980876135!5m2!1ses!2sar"
+            id="mapaClub"
+            src=""
             width="600"
             height="450"
             style="border: 0"
@@ -64,47 +66,41 @@
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
+
           <div class="infoClub">
             <details class="acordeon">
               <summary>Ubicación</summary>
               <hr class="divider" />
-              <p>Isuani 1800. Godoy Cruz, Argentina</p>
+              <p id="detalleUbicacion">...</p>
             </details>
+
             <details class="acordeon">
               <summary>Horarios del Club</summary>
               <hr class="divider" />
-              <p>Lunes a Viernes: 9:00am a 2:00am</p>
-              <p>Sábados y Domingos: 9:00am a 2:00am</p>
-              <p>Feriados: 9:00am a 2:00am</p>
+              <div id="detalleHorarios">
+                <p>Lunes a Viernes: 9:00am a 2:00am</p>
+              </div>
             </details>
+
             <details class="acordeon">
               <summary>Servicios del Club</summary>
               <hr class="divider" />
-              <ul class="servicios detalle">
-                <li><ion-icon name="shirt-outline"></ion-icon>Vestuarios</li>
-                <li><ion-icon name="car-outline"></ion-icon>Estacionamiento</li>
-                <li><ion-icon name="medkit-outline"></ion-icon>Ayuda médica</li>
-                <li><ion-icon name="trophy-outline"></ion-icon>Torneos</li>
-                <li><ion-icon name="calendar-number-outline"></ion-icon>Cumpleaños</li>
-                <li><ion-icon name="restaurant-outline"></ion-icon>Parrilla</li>
-                <li><ion-icon name="school-outline"></ion-icon>Escuelita deportiva</li>
-                <li><ion-icon name="fast-food-outline"></ion-icon>Bar / Restaurante</li>
-              </ul>
+              <ul class="servicios detalle" id="listaServicios"></ul>
             </details>
           </div>
         </section>
       </div>
     </main>
+
     <footer>
       <div class="footer">
         <div class="logoFooter">
-          <!-- Logo Tennis -->
           <ion-icon name="tennisball-outline"></ion-icon>
         </div>
         <div class="contacto">
           <p class="footerTitulos">Contacto</p>
           <a href="mailto:pumaf@gmail.com">pumaf@gmail.com</a>
-          <a href="tel: 555-555-5555">Tel: 555-555-5555</a>
+          <a href="tel:555-555-5555">Tel: 555-555-5555</a>
           <address>Rodriguez 432 - Mendoza</address>
         </div>
         <div class="preguntasFrecuentes">
@@ -115,107 +111,74 @@
           <a href="./faq.html#otrasPreguntas">Otras Preguntas</a>
         </div>
         <div class="social">
-          <p class="footerTitulos">
-            ¿Quieres Recibir nuestras últimas novedades?
-          </p>
-          <form action="" class="novedadesFormulario">
+          <p class="footerTitulos">¿Quieres recibir nuestras últimas novedades?</p>
+          <form class="novedadesFormulario">
             <input type="email" placeholder="correo@ejemplo.com" />
             <button type="submit">Suscribirse</button>
           </form>
           <p class="footerTitulos">Nuestras Redes</p>
           <div class="redes">
-            <a href="https://www.facebook.com" target="_blank"
-              ><ion-icon name="logo-facebook"></ion-icon
-            ></a>
-            <a href="https://www.instagram.com" target="_blank"
-              ><ion-icon name="logo-instagram"></ion-icon
-            ></a>
-            <a href="https://x.com" target="_blank"
-              ><ion-icon name="logo-twitter"></ion-icon
-            ></a>
+            <a href="https://www.facebook.com" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="https://www.instagram.com" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="https://x.com" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
           </div>
         </div>
       </div>
       <div class="legal">PUMAF 2025 &copy; Todos los Derechos Reservados</div>
     </footer>
-    <!-- Enlace Ionicons -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-      <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. Obtener clubId de la URL
-      const params = new URLSearchParams(window.location.search);
-      const clubId = params.get('clubId');
-      if (!clubId) {
-        console.error('No se recibió clubId en la URL');
-        return;
-      }
 
-      // 2. Recuperar datos del club desde sessionStorage
-      const clubKey = `club_${clubId}`;
-      const clubData = JSON.parse(sessionStorage.getItem(clubKey) || 'null');
-      if (!clubData) {
-        console.error(`No hay datos para ${clubKey} en sessionStorage`);
-        return;
-      }
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-      // 3. Referencias a elementos del DOM
-      const logoEl      = document.querySelector('#imagenClub');
-      const titleEl     = document.querySelector('.datosClub h1');
-      const addressEl   = document.querySelector('.datosClub .detalle');
-      const mapIframe   = document.querySelector('.ubicacionClub iframe');
-      const infoUbicEl  = document.querySelector('.infoClub details:nth-of-type(1) p');
-      const infoHorasEl = document.querySelector('.infoClub details:nth-of-type(2)');
-      const infoServEl  = document.querySelector('.infoClub details:nth-of-type(3) ul');
+    <!-- Script dinámico -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const clubId = params.get('clubId');
+        if (!clubId) return;
 
-      // 4. Poner logo (si existe)
-      if (logoEl && clubData.logo) {
-        logoEl.src = clubData.logo;
-        logoEl.alt = clubData.nombre_fantasia;
-      }
+        const clubKey = `club_${clubId}`;
+        const clubData = JSON.parse(sessionStorage.getItem(clubKey));
+        if (!clubData) return;
 
-      // 5. Nombre y dirección
-      titleEl.textContent = clubData.nombre_fantasia || 'Sin nombre';
-      const dom = clubData.domicilio || {};
-      const direccionTexto = [
-        dom.calle,
-        dom.numeracion,
-        dom.localidad.localidad,
-        dom.localidad.provincia.provincia,
-        dom.localidad.provincia.pais.pais,
-      ].filter(Boolean).join(', ');
-      addressEl.innerHTML = `<ion-icon name="compass-outline"></ion-icon> ${direccionTexto}`;
+        const imgEl = document.getElementById("imagenClub");
+        const nombreEl = document.getElementById("nombreClub");
+        const direccionEl = document.getElementById("direccionClub");
+        const mapaEl = document.getElementById("mapaClub");
+        const ubicEl = document.getElementById("detalleUbicacion");
+        const horariosEl = document.getElementById("detalleHorarios");
+        const serviciosEl = document.getElementById("listaServicios");
 
-      // 6. Mapa: generar enlace de Google Maps con la dirección
-      const query = encodeURIComponent(direccionTexto);
-      mapIframe.src = `https://www.google.com/maps/embed/v1/place?key=TU_API_KEY&q=${query}`;
+        // Logo y nombre
+        if (clubData.logo) imgEl.src = clubData.logo;
+        nombreEl.textContent = clubData.nombre_fantasia;
 
-      // 7. Ubicación detallada
-      infoUbicEl.textContent = direccionTexto;
+        // Dirección
+        const dom = clubData.domicilio;
+        const direccion = [
+          dom?.calle,
+          dom?.numeracion,
+          dom?.localidad?.localidad,
+          dom?.localidad?.provincia?.provincia,
+          dom?.localidad?.provincia?.pais?.pais
+        ].filter(Boolean).join(', ');
+        direccionEl.innerHTML = `<ion-icon name="compass-outline"></ion-icon> ${direccion}`;
+        ubicEl.textContent = direccion;
+        mapaEl.src = `https://maps.google.com/maps?q=${encodeURIComponent(direccion)}&output=embed`;
 
-      // 8. Horarios del club (si vienen en el JSON)
-      if (clubData.horarios_club && clubData.horarios_club.length) {
-        // Limpiamos y construimos nuevos <p>
-        infoHorasEl.innerHTML = `
-          <summary>Horarios del Club</summary>
-          <hr class="divider" />
-          ${clubData.horarios_club.map(h => `<p>${h}</p>`).join('')}
-        `;
-      }
+        // Horarios
+        if (Array.isArray(clubData.horarios_club)) {
+          horariosEl.innerHTML = clubData.horarios_club.map(h => `<p>${h}</p>`).join('');
+        }
 
-      // 9. Servicios del club (si vienen en el JSON)
-      if (clubData.servicios && clubData.servicios.length) {
-        infoServEl.innerHTML = clubData.servicios
-          .map(s => `<li><ion-icon name="${s.icon}"></ion-icon> ${s.nombre}</li>`)
-          .join('');
-      }
-    });
-  </script>
+        // Servicios
+        if (Array.isArray(clubData.servicios)) {
+          serviciosEl.innerHTML = clubData.servicios.map(s =>
+            `<li><ion-icon name="${s.icon}"></ion-icon> ${s.nombre}</li>`
+          ).join('');
+        }
+      });
+    </script>
   </body>
 </html>
