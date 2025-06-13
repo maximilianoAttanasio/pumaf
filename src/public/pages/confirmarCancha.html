@@ -199,12 +199,30 @@
       ? precioTotal * 0.5
       : precioTotal;
 
+      //Hora actual
+      const now = new Date();
+
+const pad2 = n => String(n).padStart(2, '0');
+
+const localDateTime = [
+  now.getFullYear(),
+  pad2(now.getMonth() + 1),
+  pad2(now.getDate())
+].join('-') + 'T' +
+[
+  pad2(now.getHours()),
+  pad2(now.getMinutes()),
+  pad2(now.getSeconds())
+].join(':');
+
+
     // 3) Armás tu payload (podés incluir los datos del usuario también)
-    const payload = {
-      monto,
-      descripcion: 'Reserva Cancha PUMAF',
-      // …otros campos que quieras guardar
-    };
+   const payload = {
+  fecha: localDateTime,            // que ya tienes calculado
+  turno:         { id: 5 },   // así Jackson lo convierte en new Turno(5)
+  usuario:       { id: 2 },
+  estado_reserva:{ id: 1 }
+};
 
     // 4) Llamás a tu endpoint que crea la preferencia
     const resp = await fetch('http://localhost:8081/pagos/preference', {
