@@ -134,14 +134,8 @@
     <!-- Script dinámico -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const params = new URLSearchParams(window.location.search);
-        const clubId = params.get('clubSeleccionado');
-        if (!clubId) return;
-
-        const clubKey = `club_${clubId}`;
-        const clubData = JSON.parse(sessionStorage.getItem(clubKey));
+       const clubData = JSON.parse(sessionStorage.getItem('clubSeleccionado'));
         if (!clubData) return;
-
         const imgEl = document.getElementById("imagenClub");
         const nombreEl = document.getElementById("nombreClub");
         const direccionEl = document.getElementById("direccionClub");

@@ -32,7 +32,6 @@
           <option value="">Seleccione una localidad</option>
         </select>
         <input type="date" />
-        <input type="time" />
         <button id="botonSelector" class="btn">Buscar canchas</button>
       </div>
     </div>
@@ -125,7 +124,7 @@
   const deporteId = document.getElementById("selectorDeporte").value;
   const localidadId = document.getElementById("selectorLocalidad").value;
   const fecha = document.querySelector(".buscador input[type='date']").value;
-  const hora = document.querySelector(".buscador input[type='time']").value;
+  // const hora = document.querySelector(".buscador input[type='time']").value;
 
   if (!deporteId || !localidadId || !fecha) {
     alert("Por favor completÃ¡ deporte, localidad y fecha.");
@@ -148,7 +147,7 @@
 
     sessionStorage.setItem("clubes", JSON.stringify(clubes));
     sessionStorage.setItem("fecha", fecha);
-    sessionStorage.setItem("hora", hora);
+    // sessionStorage.setItem("hora", hora);
 
     window.location.href = "busquedaCanchas.html";
 

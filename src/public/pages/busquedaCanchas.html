@@ -110,7 +110,7 @@
           article.querySelector('.btnVerCanchas').addEventListener('click', async () => {
             const clubId = article.dataset.clubId;
             try {
-              const resp = await fetch(`http://localhost:8081/canchas/byClub/${clubId}`,{
+              const resp = await fetch(`http://localhost:8081/canchas/byClub/${clubId}?fechaTurno=${fechaSeleccionada}`,{
                 method: 'GET',
                 headers: {
                   'Content-Type': 'application/json',
