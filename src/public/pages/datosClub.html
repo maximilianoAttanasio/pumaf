@@ -8,7 +8,9 @@
   </head>
   <body>
     <header>
-      <a href="../index.html"><img class="logoPumaf" src="../img/logo.webp" alt="Logo PUMAF" /></a>
+      <a href="../index.html">
+        <img class="logoPumaf" src="../img/logo.webp" alt="Logo PUMAF" />
+      </a>
       <nav>
         <ul class="linksPumaf">
           <li><a href="#">Item 1</a></li>
@@ -122,18 +124,30 @@
           </form>
           <p class="footerTitulos">Nuestras Redes</p>
           <div class="redes">
-            <a href="https://www.facebook.com" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
-            <a href="https://www.instagram.com" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="https://x.com" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
+            <a href="https://www.facebook.com" target="_blank"
+              ><ion-icon name="logo-facebook"></ion-icon
+            ></a>
+            <a href="https://www.instagram.com" target="_blank"
+              ><ion-icon name="logo-instagram"></ion-icon
+            ></a>
+            <a href="https://x.com" target="_blank"
+              ><ion-icon name="logo-twitter"></ion-icon
+            ></a>
           </div>
         </div>
       </div>
       <div class="legal">PUMAF 2025 &copy; Todos los Derechos Reservados</div>
     </footer>
     <!-- Enlace Ionicons -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+      <script>
     document.addEventListener('DOMContentLoaded', () => {
       // 1. Obtener clubId de la URL
       const params = new URLSearchParams(window.location.search);
@@ -180,7 +194,7 @@
 
       // 6. Mapa: generar enlace de Google Maps con la dirección
       const query = encodeURIComponent(direccionTexto);
-      mapIframe.src = `https://maps.google.com/maps?q=${query}&output=embed`;
+      mapIframe.src = `https://www.google.com/maps/embed/v1/place?key=TU_API_KEY&q=${query}`;
 
       // 7. Ubicación detallada
       infoUbicEl.textContent = direccionTexto;

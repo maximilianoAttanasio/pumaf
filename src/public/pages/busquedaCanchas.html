@@ -7,263 +7,75 @@
     <title>Búsqueda de Canchas - PUMAF</title>
   </head>
   <body>
-    <header>
-      <a href="../index.html">
-        <img class="logoPumaf" src="../img/logo.webp" alt="Logo PUMAF" />
-      </a>
-      <nav>
-        <ul class="linksPumaf">
-          <li><a href="#">Item 1</a></li>
-          <li><a href="./reservas.html">Reservas</a></li>
-          <li><a href="./login.html">Iniciar Sesión</a></li>
-          <li><a href="./registro.html">Registrarse</a></li>
-          <li>
-            <a href="./perfilUsuario.html?userId=40972817"
-              ><img
-                src="https://placehold.co/100x100"
-                alt="Perfil usuario"
-                class="imagenHeader"
-            /></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <header>…</header>
     <main class="background">
       <section class="cards">
         <!-- Aquí se volcarán las cards dinámicamente -->
       </section>
-      <div id="modalCanchas" class="modal hidden">
-        <div class="modal-content">
-          <span id="cerrarModal" class="close">&times;</span>
-          <h2>Canchas del Club</h2>
-          <div id="contenedorCanchas"></div>
-        </div>
-      </div>
     </main>
-    <footer>
-      <div class="footer">
-        <div class="logoFooter">
-          <!-- Logo Tennis -->
-          <ion-icon name="tennisball-outline"></ion-icon>
-        </div>
-        <div class="contacto">
-          <p class="footerTitulos">Contacto</p>
-          <a href="mailto:pumaf@gmail.com">pumaf@gmail.com</a>
-          <a href="tel: 555-555-5555">Tel: 555-555-5555</a>
-          <address>Rodriguez 432 - Mendoza</address>
-        </div>
-        <div class="preguntasFrecuentes">
-          <p class="footerTitulos">FAQ</p>
-          <a href="./faq.html#nosotros">Sobre Nosotros</a>
-          <a href="./faq.html#reservasCanchas">Reservas y Canchas</a>
-          <a href="./faq.html#pagosCanchas">Pagos y Canchas</a>
-          <a href="./faq.html#otrasPreguntas">Otras Preguntas</a>
-        </div>
-        <div class="social">
-          <p class="footerTitulos">
-            ¿Quieres Recibir nuestras últimas novedades?
-          </p>
-          <form action="" class="novedadesFormulario">
-            <input type="email" placeholder="correo@ejemplo.com" />
-            <button type="submit">Suscribirse</button>
-          </form>
-          <p class="footerTitulos">Nuestras Redes</p>
-          <div class="redes">
-            <a href="https://www.facebook.com" target="_blank"
-              ><ion-icon name="logo-facebook"></ion-icon
-            ></a>
-            <a href="https://www.instagram.com" target="_blank"
-              ><ion-icon name="logo-instagram"></ion-icon
-            ></a>
-            <a href="https://x.com" target="_blank"
-              ><ion-icon name="logo-twitter"></ion-icon
-            ></a>
-          </div>
-        </div>
-      </div>
-      <div class="legal">PUMAF 2025 &copy; Todos los Derechos Reservados</div>
-    </footer>
+    <footer>…</footer>
 
     <!-- Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <script>
-      // document.addEventListener('DOMContentLoaded', () => {
-      //   const canchas = JSON.parse(sessionStorage.getItem('canchas') || '[]');
-      //   const container = document.querySelector('section.cards');
-      //   container.innerHTML = '';
-
-      //   canchas.forEach(c => {
-      //     const clubKey = `club_${c.club.id}`;
-      //     sessionStorage.setItem(clubKey, JSON.stringify(c.club));
-
-      //     const link = document.createElement('a');
-      //       link.href = `./datosClub.html?clubId=${c.club.id}`;
-      //       link.className = 'cardLink';
-            
-      //     const article = document.createElement('article');
-      //     article.className = 'cardCancha';
-      //     article.innerHTML = `
-      //       <div class="cardHead">
-      //         <img 
-      //           src="${c.club?.logo || 'https://placehold.co/350x200'}" 
-      //           alt="${c.club?.nombre_fantasia || 'Cancha'}"
-      //         />
-      //       </div>
-      //       <div class="cardBody">
-      //         <h2>${c.club?.nombre_fantasia || 'Cancha sin nombre'}</h2>
-      //         <p class="detalle">
-      //           <ion-icon name="compass-outline"></ion-icon>
-      //           ${c.domicilio?.calle || ''} ${c.domicilio?.numeracion || ''}
-      //         </p>
-      //         <p class="detalle">
-      //           <strong>Cancha #${c.nro_cancha}</strong> · 
-      //           ${c.tipo_superficie?.tipo_superficie || ''}
-      //           · ${c.techada ? 'Techada' : 'Al aire libre'}
-      //         </p>
-      //         <!-- Si tu modelo aporta precio, por ejemplo c.precio: -->
-      //         ${ c.precio 
-      //           ? `<span>$${c.precio}</span>` 
-      //           : ''
-      //         }
-      //         <div class="buttonsTurno">
-      //           <!-- Si tienes horarios en el JSON: -->
-      //           ${ (c.horarios || []).map(h => 
-      //               `<button class="btn">${h}</button>`
-      //             ).join('')
-      //           }
-      //         </div>
-      //       </div>
-      //     `;
-      //     container.appendChild(link);
-      //     link.appendChild(article);
-      //   });
-
-      //   // Opcional: si no hay canchas
-      //   if (!canchas.length) {
-      //     container.innerHTML = '<p>No se encontraron canchas para ese deporte.</p>';
-      //   }
-      // });
       document.addEventListener('DOMContentLoaded', () => {
-      const canchas = JSON.parse(sessionStorage.getItem('canchas') || '[]');
-      const container = document.querySelector('section.cards');
-      container.innerHTML = '';
+        const canchas = JSON.parse(sessionStorage.getItem('canchas') || '[]');
+        const container = document.querySelector('section.cards');
+        container.innerHTML = '';
 
-      // Modal y contenedor para mostrar canchas
-      const modal = document.getElementById("modalCanchas");
-      const contenedorCanchas = document.getElementById("contenedorCanchas");
-      const cerrarModal = document.getElementById("cerrarModal");
+        canchas.forEach(c => {
+          const clubKey = `club_${c.club.id}`;
+          sessionStorage.setItem(clubKey, JSON.stringify(c.club));
 
-      cerrarModal.addEventListener("click", () => {
-        modal.classList.add("hidden");
-        contenedorCanchas.innerHTML = "";
-      });
-
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          modal.classList.add("hidden");
-          contenedorCanchas.innerHTML = "";
-        }
-      });
-
-
-      // Función para mostrar canchas en modal
-      function mostrarCanchasDelClub(idClub) {
-        contenedorCanchas.innerHTML = "";
-        // Filtrar todas las canchas que pertenezcan a este club
-        const canchasClub = canchas.filter(c => c.club.id === idClub);
-
-        if (!canchasClub.length) {
-          contenedorCanchas.innerHTML = "<p>No hay canchas registradas para este club.</p>";
-        } else {
-          canchasClub.forEach(c => {
-            const div = document.createElement("div");
-            div.className = "cancha-item";
-            div.innerHTML = `
-              <h4>Cancha #${c.nro_cancha}</h4>
-              <p>Superficie: ${c.tipo_superficie?.tipo_superficie || 'N/A'}</p>
-              <p>${c.techada ? 'Techada' : 'Al aire libre'}</p>
-              ${ c.precio ? `<p>Precio: $${c.precio}</p>` : '' }
-              ${ (c.horarios || []).length 
-                ? `<p>Horarios: ${c.horarios.join(', ')}</p>` 
+          const link = document.createElement('a');
+            link.href = `./datosClub.html?clubId=${c.club.id}`;
+            link.className = 'cardLink';
+            
+          const article = document.createElement('article');
+          article.className = 'cardCancha';
+          article.innerHTML = `
+            <div class="cardHead">
+              <img 
+                src="${c.club?.logo || 'https://placehold.co/350x200'}" 
+                alt="${c.club?.nombre_fantasia || 'Cancha'}"
+              />
+            </div>
+            <div class="cardBody">
+              <h2>${c.club?.nombre_fantasia || 'Cancha sin nombre'}</h2>
+              <p class="detalle">
+                <ion-icon name="compass-outline"></ion-icon>
+                ${c.domicilio?.calle || ''} ${c.domicilio?.numeracion || ''}
+              </p>
+              <p class="detalle">
+                <strong>Cancha #${c.nro_cancha}</strong> · 
+                ${c.tipo_superficie?.tipo_superficie || ''}
+                · ${c.techada ? 'Techada' : 'Al aire libre'}
+              </p>
+              <!-- Si tu modelo aporta precio, por ejemplo c.precio: -->
+              ${ c.precio 
+                ? `<span>$${c.precio}</span>` 
                 : ''
               }
-            `;
-            contenedorCanchas.appendChild(div);
-            div.addEventListener("click", () => {
-              sessionStorage.setItem("canchaSeleccionada", JSON.stringify(c));
-              window.location.href = "confirmarCancha.html";
-            });
-          });
-        }
-
-        modal.classList.remove("hidden");
-      }
-
-      canchas.forEach(c => {
-        const clubKey = `club_${c.club.id}`;
-        sessionStorage.setItem(clubKey, JSON.stringify(c.club));
-
-        // Crear artículo de la cancha
-        const article = document.createElement('article');
-        article.className = 'cardCancha';
-
-        // Encabezado con link solo en la imagen
-        const cardHead = document.createElement('div');
-        cardHead.className = 'cardHead';
-        cardHead.innerHTML = `
-          <a href="./datosClub.html?clubId=${c.club.id}">
-            <img 
-              src="${c.club?.logo || 'https://placehold.co/350x200'}" 
-              alt="${c.club?.nombre_fantasia || 'Cancha'}"
-            />
-          </a>
-        `;
-
-        // Cuerpo con info y click para abrir modal
-        const cardBody = document.createElement('div');
-        cardBody.className = 'cardBody';
-        cardBody.innerHTML = `
-          <h2>${c.club?.nombre_fantasia || 'Cancha sin nombre'}</h2>
-          <p class="detalle">
-            <ion-icon name="compass-outline"></ion-icon>
-            ${c.domicilio?.calle || ''} ${c.domicilio?.numeracion || ''}
-          </p>
-          <p class="detalle">
-            <strong>Cancha #${c.nro_cancha}</strong> · 
-            ${c.tipo_superficie?.tipo_superficie || ''}
-            · ${c.techada ? 'Techada' : 'Al aire libre'}
-          </p>
-          ${ c.precio 
-            ? `<span>$${c.precio}</span>` 
-            : ''
-          }
-          <div class="buttonsTurno">
-            ${ (c.horarios || []).map(h => 
-                `<button class="btn">${h}</button>`
-              ).join('')
-            }
-          </div>
-        `;
-
-        // Click en el cuerpo abre el modal
-        cardBody.addEventListener('click', () => {
-          mostrarCanchasDelClub(c.club.id);
+              <div class="buttonsTurno">
+                <!-- Si tienes horarios en el JSON: -->
+                ${ (c.horarios || []).map(h => 
+                    `<button class="btn">${h}</button>`
+                  ).join('')
+                }
+              </div>
+            </div>
+          `;
+          container.appendChild(link);
+          link.appendChild(article);
         });
 
-        article.appendChild(cardHead);
-        article.appendChild(cardBody);
-        container.appendChild(article);
-
+        // Opcional: si no hay canchas
+        if (!canchas.length) {
+          container.innerHTML = '<p>No se encontraron canchas para ese deporte.</p>';
+        }
       });
-
-      // Mensaje si no hay canchas
-      if (!canchas.length) {
-        container.innerHTML = '<p>No se encontraron canchas para ese deporte.</p>';
-      }
-    });
-
     </script>
   </body>
 </html>
