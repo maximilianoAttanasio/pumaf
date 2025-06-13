@@ -1,0 +1,114 @@
+/* ---------- BACKDROP DEL MODAL ---------- */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* ---------- CONTENIDO DEL MODAL ---------- */
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  padding: 1.5rem;
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* ---------- ANIMACIÓN APARECER ---------- */
+@keyframes fadeIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to   { transform: translateY(0);       opacity: 1; }
+}
+
+/* ---------- BOTÓN CERRAR ---------- */
+.close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.close:hover {
+  color: #000;
+}
+
+/* ---------- TÍTULO DEL MODAL ---------- */
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 1.75rem;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+/* ---------- CONTENEDOR DE CANCHAS ---------- */
+#contenedorCanchas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* ---------- TARJETA DE CANCHA ---------- */
+.cancha-card {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cancha-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ---------- ENCABEZADO DE CANCHA ---------- */
+.cancha-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+/* ---------- DETALLE SIMPLE ---------- */
+.cancha-card p {
+  margin: 0.25rem 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* ---------- LISTA DE TURNOS ---------- */
+.cancha-card .turnos {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ---------- BOTÓN DE TURNO ---------- */
+.turno-btn {
+  background: #6200ea;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.turno-btn:hover {
+  background: #4500b5;
+}

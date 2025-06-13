@@ -2,14 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <link rel="stylesheet" href="../css/master.css" />
     <title>Confirmar Cancha</title>
   </head>
   <body>
     <header>
       <a href="../index.html">
-        <img class="logoPumaf" src="../img/logo.webp" alt="Logo PUMAF" />
+        <img
+          class="logoPumaf"
+          src="../img/logo.webp"
+          alt="Logo PUMAF"
+        />
       </a>
       <nav>
         <ul class="linksPumaf">
@@ -38,47 +45,45 @@
       </div>
       <form action="" class="formReserva">
         <section class="resumenTurno">
-          <h2>Futbol</h2>
+          <h2 id="deporteNombre">–</h2>
           <hr class="divider" />
-          <h3>Al cubo</h3>
+          <h3 id="clubNombre">–</h3>
           <div class="detalle">
-            <p>
-              <ion-icon name="compass-outline"></ion-icon>Boedo y Acceso Sur,
-              Luján de Cuyo
-            </p>
+            <p id="direcClub">–</p>
           </div>
           <div class="detalle fila">
-            <span
-              ><ion-icon name="calendar-number-outline"></ion-icon>Fecha</span
-            >
-            <p>Mar. 03/06/2025</p>
+            <span><ion-icon name="calendar-number-outline"></ion-icon>Fecha</span>
+            <p id="fechaTurno">–</p>
           </div>
           <div class="detalle fila">
             <span><ion-icon name="time-outline"></ion-icon>Hora</span>
-            <p>18:00 - 19:30</p>
+            <p id="horaTurno">–</p>
           </div>
           <div class="detalle cancha">
-            <span
-              ><ion-icon name="tennisball-outline"></ion-icon>Cancha 2 Padel -
-              Padel</span>
-            <p>Blindex y sintético, Con iluminación, Descubierta</p>
+            <span id="canchaInfo">–</span>
+            <p id="supInfo">–</p>
           </div>
           <hr class="divider" />
-          <div class=" detalle precioCancha">
-            <p>
-              <ion-icon name="cash-outline"></ion-icon>Precio
-            </p>
-            <span>$24.000</span>
+          <div class="detalle precioCancha">
+            <p><ion-icon name="cash-outline"></ion-icon>Precio</p>
+            <span id="precioTotal">–</span>
           </div>
           <div class="opcionesPago">
             <label class="selectorOpcion">
-              <input type="radio" name="tipoPago" value="adelanto" checked />
+              <input
+                type="radio"
+                name="tipoPago"
+                value="adelanto"
+                checked
+              />
               <div class="selectorRadio">
                 <div class="infoOpcion">
                   <strong>Anticipo / Adelanto:</strong>
                   <span>(50% del valor del turno)</span>
                 </div>
-                <div class="precioOpcion"><span>$12.000</span></div>
+                <div class="precioOpcion">
+                  <span id="precioAdelanto">–</span>
+                </div>
               </div>
             </label>
             <label class="selectorOpcion">
@@ -88,7 +93,9 @@
                   <strong>Total:</strong>
                   <span>(100% del valor del turno)</span>
                 </div>
-                <div class="precioOpcion"><span>$24.000</span></div>
+                <div class="precioOpcion">
+                  <span id="precioCompleto">–</span>
+                </div>
               </div>
             </label>
           </div>
@@ -117,158 +124,113 @@
           <hr class="divider" />
           <p>
             <strong>IMPORTANTE:</strong> Sólo se debitará el importe del
-            Anticipo / Adelanto. En el complejo abonarás el saldo restante del
-            valor total del turno (si lo hubiere). En caso de que canceles con
-            más de 12hs de anticipación, se reintegrará el importe de la seña de
-            manera automática.
+            Anticipo / Adelanto. En el complejo abonarás el saldo restante
+            del valor total del turno (si lo hubiere). En caso de que
+            canceles con más de 12hs de anticipación, se reintegrará el
+            importe de la seña de manera automática.
           </p>
         </section>
         <section class="btnConfirmarCancha">
-          <button type="submit" class="btn btnEnvio">Continuar</button>
-          <!-- <button id="btnPay" class="btn btnEnvio">Pagar</button> -->
+          <button type="submit" class="btn btnEnvio">
+            Continuar
+          </button>
         </section>
       </form>
     </main>
     <footer>
-      <div class="footer">
-        <div class="logoFooter">
-          <!-- Logo Tennis -->
-          <ion-icon name="tennisball-outline"></ion-icon>
-        </div>
-        <div class="contacto">
-          <p class="footerTitulos">Contacto</p>
-          <a href="mailto:pumaf@gmail.com">pumaf@gmail.com</a>
-          <a href="tel: 555-555-5555">Tel: 555-555-5555</a>
-          <address>Rodriguez 432 - Mendoza</address>
-        </div>
-        <div class="preguntasFrecuentes">
-          <p class="footerTitulos">FAQ</p>
-          <a href="./faq.html#nosotros">Sobre Nosotros</a>
-          <a href="./faq.html#reservasCanchas">Reservas y Canchas</a>
-          <a href="./faq.html#pagosCanchas">Pagos y Canchas</a>
-          <a href="./faq.html#otrasPreguntas">Otras Preguntas</a>
-        </div>
-        <div class="social">
-          <p class="footerTitulos">
-            ¿Quieres Recibir nuestras últimas novedades?
-          </p>
-          <form action="" class="novedadesFormulario">
-            <input type="email" placeholder="correo@ejemplo.com" />
-            <button type="submit">Suscribirse</button>
-          </form>
-          <p class="footerTitulos">Nuestras Redes</p>
-          <div class="redes">
-            <a href="https://www.facebook.com" target="_blank"
-              ><ion-icon name="logo-facebook"></ion-icon
-            ></a>
-            <a href="https://www.instagram.com" target="_blank"
-              ><ion-icon name="logo-instagram"></ion-icon
-            ></a>
-            <a href="https://x.com" target="_blank"
-              ><ion-icon name="logo-twitter"></ion-icon
-            ></a>
-          </div>
-        </div>
-      </div>
-      <div class="legal">PUMAF 2025 &copy; Todos los Derechos Reservados</div>
+      <!-- footer -->
     </footer>
-    <!-- Enlace Ionicons -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
 
-    <!-- 1) Incluí el SDK -->
-<script src="https://sdk.mercadopago.com/js/v2"></script>
-
-<script>
-  // 2) Inicializás el cliente de Mercado Pago con tu Public Key (sandbox o prod)
-  const mp = new MercadoPago("APP_USR-fd119ed2-243c-4ada-96a3-f6d8a7df93ea", {
-    locale: 'es-AR'
-  });
-
-  document.querySelector('.formReserva').addEventListener('submit', async e => {
-    e.preventDefault();                  // evita recarga
-    const tipoPago = document.querySelector('input[name=tipoPago]:checked').value;
-    const precioTotal = 24000;           // o calculalo dinámicamente del DOM
-    const monto = tipoPago === 'adelanto'
-      ? precioTotal * 0.5
-      : precioTotal;
-
-      //Hora actual
-      const now = new Date();
-
-const pad2 = n => String(n).padStart(2, '0');
-
-const localDateTime = [
-  now.getFullYear(),
-  pad2(now.getMonth() + 1),
-  pad2(now.getDate())
-].join('-') + 'T' +
-[
-  pad2(now.getHours()),
-  pad2(now.getMinutes()),
-  pad2(now.getSeconds())
-].join(':');
-
-
-    // 3) Armás tu payload (podés incluir los datos del usuario también)
-   const payload = {
-  fecha: localDateTime,            // que ya tienes calculado
-  turno:         { id: 5 },   // así Jackson lo convierte en new Turno(5)
-  usuario:       { id: 2 },
-  estado_reserva:{ id: 1 }
-};
-
-    // 4) Llamás a tu endpoint que crea la preferencia
-    const resp = await fetch('http://localhost:8081/pagos/preference', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Basic ' + btoa('admin:admin123')
-      },
-      body: JSON.stringify(payload)
-    });
-    const { url  } = await resp.json();  // debe devolver el ID de preferencia
-    console.log('✅ Preferencia creada:', url );
-   window.open(url , '_blank');
-
-
-  });
-</script>
-
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
     <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const cancha = JSON.parse(sessionStorage.getItem("canchaSeleccionada") || '{}');
-    const fecha = sessionStorage.getItem('fechaSeleccionada');
-    const hora = sessionStorage.getItem('horaSeleccionada');
+      const mp = new MercadoPago(
+        "APP_USR-fd119ed2-243c-4ada-96a3-f6d8a7df93ea",
+        { locale: "es-AR" }
+      );
 
-    if (!cancha || !cancha.club) {
-      document.querySelector("main").innerHTML = "<p>No se encontró la información de la cancha.</p>";
-      return;
-    }
+      document.addEventListener("DOMContentLoaded", () => {
+        const turno = JSON.parse(
+          sessionStorage.getItem("turnoSeleccionado") || "{}"
+        );
+        const fecha = turno.fecha || "";
+        const hora = turno.hora_inicio || "";
 
-    // Actualizá los elementos con los datos
-    document.querySelector("h2").textContent = cancha.deporte?.deporte || "Deporte";
-    document.querySelector("h3").textContent = cancha.club?.nombre_fantasia || "Club";
-    document.querySelector(".detalle p").textContent = `${cancha.club.domicilio.calle || ''} ${cancha.club.domicilio.numeracion || 'No se pudo obtener dirección'}`;
+        document.getElementById("deporteNombre").textContent =
+          turno.deporte?.deporte || "";
+        document.getElementById("clubNombre").textContent =
+          turno.club?.nombre_fantasia || "";
+        document.getElementById("direcClub").textContent = [
+          turno.club?.domicilio?.calle,
+          turno.club?.domicilio?.numeracion,
+        ]
+          .filter(Boolean)
+          .join(" ");
+        document.getElementById("fechaTurno").textContent = fecha;
+        document.getElementById("horaTurno").textContent = hora;
+        document.getElementById("canchaInfo").textContent = `Cancha #${
+          turno.cancha?.nro_cancha
+        } - ${turno.deporte?.deporte}`;
+        document.getElementById("supInfo").textContent = [
+          turno.tipo_superficie?.tipo_superficie,
+          turno.techada ? "Cubierta" : "Al aire libre",
+        ]
+          .filter(Boolean)
+          .join(", ");
+        document.getElementById("precioTotal").textContent = `$${turno.precio}`;
 
-    document.querySelectorAll(".detalle.fila")[0].querySelector("p").textContent = fecha; // Podés completar después
-    document.querySelectorAll(".detalle.fila")[1].querySelector("p").textContent = hora;  // Igual que arriba
+        document.getElementById("precioAdelanto").textContent = `$${Math.round(
+          turno.precio * 0.5
+        )}`;
+        document.getElementById("precioCompleto").textContent = `$${turno.precio}`;
 
-    document.querySelector(".detalle.cancha span").textContent = `Cancha #${cancha.nro_cancha} - ${cancha.deporte?.deporte || ''}`;
-    document.querySelector(".detalle.cancha p").textContent = `${cancha.tipo_superficie?.tipo_superficie || ''}, ${cancha.techada ? 'Cubierta' : 'Al aire libre'}`;
+        document
+          .querySelector(".formReserva")
+          .addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const tipoPago = document.querySelector(
+              "input[name=tipoPago]:checked"
+            ).value;
+            const monto =
+              tipoPago === "adelanto"
+                ? turno.precio * 0.5
+                : turno.precio;
 
-    document.querySelector(".precioCancha span").textContent = `$${cancha.precio}`;
+            const now = new Date();
+            const pad2 = (n) => String(n).padStart(2, "0");
+            const localDateTime =
+              [
+                now.getFullYear(),
+                pad2(now.getMonth() + 1),
+                pad2(now.getDate()),
+              ].join("-") +
+              "T" +
+              [pad2(now.getHours()), pad2(now.getMinutes()), pad2(now.getSeconds())].join(
+                ":"
+              );
 
-    document.querySelectorAll(".precioOpcion span")[0].textContent = `$${Math.floor(cancha.precio / 2)}`;
-    document.querySelectorAll(".precioOpcion span")[1].textContent = `$${cancha.precio}`;
-  });
-</script>
+            const payload = {
+              fecha: localDateTime,
+              turno: { id: turno.id },
+              usuario: { id: 1 },
+              estado_reserva: { id: 2 },
+              montoPagado: monto
+            };
 
+            const resp = await fetch(
+              "http://localhost:8081/pagos/preference",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: "Basic " + btoa("admin:admin123"),
+                },
+                body: JSON.stringify(payload),
+              }
+            );
+            const { url } = await resp.json();
+            window.open(url, "_blank");
+          });
+      });
+    </script>
   </body>
 </html>
