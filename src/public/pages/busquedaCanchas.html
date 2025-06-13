@@ -145,43 +145,8 @@
             <h2>${club.nombre_fantasia}</h2>
             <p class="detalle"><ion-icon name="compass-outline"></ion-icon> ${club.domicilio?.calle || ''} ${club.domicilio?.numeracion || ''}</p>
             <button class="btn btnVerCanchas">Ver Canchas</button>
-            `;
-            // Encabezado con link solo en la imagen
-            const cardHead = document.createElement('div');
-            cardHead.className = 'cardHead';
-            cardHead.innerHTML = `
-              <a href="./datosClub.html?clubId=${c.club.id}">
-                <img 
-                  src="${c.club?.logo || 'https://placehold.co/350x200'}" 
-                  alt="${c.club?.nombre_fantasia || 'Cancha'}"
-                />
-              </a>
-            `;
-            // Cuerpo con info y click para abrir modal
-            const cardBody = document.createElement('div');
-            cardBody.className = 'cardBody';
-            cardBody.innerHTML = `
-            <h2>${c.club?.nombre_fantasia || 'Cancha sin nombre'}</h2>
-            <p class="detalle">
-              <ion-icon name="compass-outline"></ion-icon>
-              ${c.domicilio?.calle || ''} ${c.domicilio?.numeracion || ''}
-            </p>
-            <p class="detalle">
-              <strong>Cancha #${c.nro_cancha}</strong> · 
-              ${c.tipo_superficie?.tipo_superficie || ''}
-              · ${c.techada ? 'Techada' : 'Al aire libre'}
-            </p>
-            ${ c.precio 
-              ? `<span>$${c.precio}</span>` 
-              : ''
-            }
-            <div class="buttonsTurno">
-              ${ (c.turnos || []).map(h => 
-                  `<button class="btn">${h.hora_inicio}</button>`
-                ).join('')
-              }
-            </div>
-          `;
+          </div>
+        `;
 
         article.querySelector('.linkClub').addEventListener('click', (e) => {
           e.preventDefault();

@@ -122,14 +122,13 @@
 
     // Buscar canchas
     document.getElementById("botonSelector").addEventListener("click", async () => {
-      const deporteId = document.getElementById("selectorDeporte").value;
-      const localidadId = document.getElementById("selectorLocalidad").value;
-      const fecha = document.querySelector(".buscador input[type='date']").value;
-      // const hora = document.querySelector(".buscador input[type='time']").value;
-
+  const deporteId = document.getElementById("selectorDeporte").value;
+  const localidadId = document.getElementById("selectorLocalidad").value;
+  const fecha = document.querySelector(".buscador input[type='date']").value;
+  const hora = document.querySelector(".buscador input[type='time']").value;
 
   if (!deporteId || !localidadId || !fecha) {
-    alert("Por favor completá deporte, localidad y fecha.");
+    alert("Por favor completÃ¡ deporte, localidad y fecha.");
     return;
   }
 
@@ -142,7 +141,6 @@
         "Content-Type": "application/json"
       }
     });
-
 
     if (!response.ok) throw new Error(response.status + ' ' + response.statusText);
 
