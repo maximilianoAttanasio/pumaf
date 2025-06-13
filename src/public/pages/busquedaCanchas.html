@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,6 +22,7 @@
   </header>
 
   <main class="background">
+    <p id="filtroResumen" class="detalle"></p>
     <section class="cards" id="cardsContainer"></section>
 
     <div id="modalCanchas" class="modal hidden">
@@ -67,17 +67,25 @@
     <div class="legal">PUMAF 2025 &copy; Todos los Derechos Reservados</div>
   </footer>
 
-  <!-- Ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const clubes = JSON.parse(sessionStorage.getItem('clubes') || '[]');
+      const fechaSeleccionada = sessionStorage.getItem('fecha');
+      const horaSeleccionada = sessionStorage.getItem('hora');
+
       const container = document.getElementById("cardsContainer");
+      const resumen = document.getElementById("filtroResumen");
       const modal = document.getElementById("modalCanchas");
       const cerrarModal = document.getElementById("cerrarModal");
       const contenedorCanchas = document.getElementById("contenedorCanchas");
+
+      if (resumen && fechaSeleccionada) {
+        resumen.textContent = `Mostrando resultados para el ${fechaSeleccionada}` + 
+          (horaSeleccionada ? ` a las ${horaSeleccionada}` : '');
+      }
 
       cerrarModal.onclick = () => {
         modal.classList.add("hidden");
@@ -92,29 +100,41 @@
       });
 
       const mostrarCanchasDelClub = (club) => {
-        contenedorCanchas.innerHTML = `
-          <table class="tablaCanchas">
-            <thead><tr><th>Cancha</th><th>Superficie</th><th>Techada</th><th>Precio</th><th>Horarios</th></tr></thead>
-            <tbody>
-              ${(club.canchas || []).map(cancha => `
-                <tr onclick="window.location.href='confirmarCancha.html'">
-                  <td>${cancha.nro_cancha}</td>
-                  <td>${cancha.tipo_superficie?.tipo_superficie || 'N/A'}</td>
-                  <td>${cancha.techada ? 'Sí' : 'No'}</td>
-                  <td>${cancha.precio || '-'}</td>
-                  <td>${(cancha.horarios || []).join(', ')}</td>
-                </tr>
-              `).join('')}
-            </tbody>
-          </table>
-        `;
+        const canchasClub = (club.canchas || []).filter(c =>
+          (c.turnos || []).some(t =>
+            t.fecha === fechaSeleccionada &&
+            (!horaSeleccionada || t.hora_inicio === horaSeleccionada)
+          )
+        );
+
+        if (!canchasClub.length) {
+          contenedorCanchas.innerHTML = '<p>No hay canchas disponibles en esa fecha.</p>';
+        } else {
+          contenedorCanchas.innerHTML = `
+            <table class="tablaCanchas">
+              <thead><tr><th>Cancha</th><th>Superficie</th><th>Techada</th><th>Precio</th><th>Horarios</th></tr></thead>
+              <tbody>
+                ${canchasClub.map(cancha => `
+                  <tr onclick="window.location.href='confirmarCancha.html'">
+                    <td>${cancha.nro_cancha}</td>
+                    <td>${cancha.tipo_superficie?.tipo_superficie || 'N/A'}</td>
+                    <td>${cancha.techada ? 'Sí' : 'No'}</td>
+                    <td>${cancha.precio || '-'}</td>
+                    <td>${(cancha.turnos || []).filter(t => t.fecha === fechaSeleccionada).map(t => t.hora_inicio).join(', ')}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          `;
+        }
+
         modal.classList.remove("hidden");
       };
 
       clubes.forEach(club => {
         const article = document.createElement('article');
         article.className = 'cardCancha';
-        
+
         article.innerHTML = `
           <div class="cardHead">
             <a href="#" class="linkClub">
@@ -163,7 +183,6 @@
             </div>
           `;
 
-        // Agregar listeners después de crear el contenido
         article.querySelector('.linkClub').addEventListener('click', (e) => {
           e.preventDefault();
           const clubKey = `club_${club.id}`;
@@ -177,7 +196,6 @@
 
         container.appendChild(article);
       });
-
 
       if (!clubes.length) container.innerHTML = '<p>No se encontraron resultados.</p>';
     });

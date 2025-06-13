@@ -127,35 +127,39 @@
       const fecha = document.querySelector(".buscador input[type='date']").value;
       // const hora = document.querySelector(".buscador input[type='time']").value;
 
-      if (!deporteId || !localidadId) {
-        alert("Por favor seleccioná un deporte y una localidad.");
-        return;
-      }
 
-      try {
-        const basic = btoa("admin:admin123");
-        const response = await fetch(`http://localhost:8081/clubes/filtros?deporteId=${deporteId}&localidadId=${localidadId}`, {
-          headers: {
-            Authorization: `Basic ${basic}`,
-            "Content-Type": "application/json"
-          }
-        });
+  if (!deporteId || !localidadId || !fecha) {
+    alert("Por favor completá deporte, localidad y fecha.");
+    return;
+  }
 
-        if (!response.ok) throw new Error(response.status + ' ' + response.statusText);
-        const clubes = await response.json();
+  try {
+    const basic = btoa("admin:admin123");
 
-        sessionStorage.setItem("clubes", JSON.stringify(clubes));
-        sessionStorage.setItem("fecha", fecha);
-        sessionStorage.setItem("hora", hora);
-
-        window.location.href = "busquedaCanchas.html";
-
-      } catch (error) {
-        console.error("Error al filtrar clubes:", error);
-        alert("No se pudieron buscar los clubes.");
+    const response = await fetch(`http://localhost:8081/clubes/filtros?deporteId=${deporteId}&localidadId=${localidadId}&fecha=${fecha}`, {
+      headers: {
+        Authorization: `Basic ${basic}`,
+        "Content-Type": "application/json"
       }
     });
-    
+
+
+    if (!response.ok) throw new Error(response.status + ' ' + response.statusText);
+
+    const clubes = await response.json();
+
+    sessionStorage.setItem("clubes", JSON.stringify(clubes));
+    sessionStorage.setItem("fecha", fecha);
+    sessionStorage.setItem("hora", hora);
+
+    window.location.href = "busquedaCanchas.html";
+
+  } catch (error) {
+    console.error("Error al filtrar clubes:", error);
+    alert("No se pudieron buscar los clubes.");
+  }
+});
+
 
   </script>
 </body>
